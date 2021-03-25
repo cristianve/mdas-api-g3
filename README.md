@@ -1,6 +1,6 @@
 # LaSalle - Diseño del software II 🎓🏭
 
-# PokeApi 📳🎮 
+# PokeApi 🎮 
 
 
 # Contenido 📇
