@@ -1,8 +1,7 @@
-﻿using Pokemons.Types.Application.Request;
-using Pokemons.Types.Application.Response;
+﻿using System.Collections.Generic;
 using Pokemons.Types.Domain.Service;
-using System.Linq;
 using System.Threading.Tasks;
+using Pokemons.Types.Domain.ValueObject;
 
 namespace Pokemons.Types.Application.UseCase
 {
@@ -15,14 +14,9 @@ namespace Pokemons.Types.Application.UseCase
             _pokemonTypeRepository = pokemonTypeRepository;
         }
 
-        public async Task<GetPokemonTypeResponse> Execute(GetPokemonTypeRequest request)
+        public Task<IEnumerable<PokemonType>> Execute(string pokemonName)
         {
-            var types = await _pokemonTypeRepository.Find(request.PokemonName);
-
-            return new GetPokemonTypeResponse
-            {
-                Types = types.Select(s => s.Name).ToArray()
-            };
+            return _pokemonTypeRepository.Find(pokemonName);
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿using Pokemons.Types.Domain.Exceptions;
-using Pokemons.Types.Domain.Service;
-using Pokemons.Types.Domain.ValueObject;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Pokemons.Types.Domain.Exceptions;
+using Pokemons.Types.Domain.Service;
+using Pokemons.Types.Domain.ValueObject;
 
-namespace Pokemons.Types.Infrastructure
+namespace Pokemons.Types.Persistence
 {
     public class PokeApiPokemonTypeRepository : IPokemonTypeRepository
     {
