@@ -37,7 +37,7 @@ namespace Pokemons.Types.Infrastructure
             {
                 if (ex.StatusCode == 404)
                 {
-                    return null;
+                    throw new PokemonNotFoundException("Pokemon " + pokemonName + " does not exist");
                 }
 
                 throw;

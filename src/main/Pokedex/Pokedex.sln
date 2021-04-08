@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Types", "Types", "{592BEA23-C037-4F82-ACCA-394D6F3504AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5ADC31A4-A3CA-412E-B15D-2D7FC704B4BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DAD1287B-F4A1-4E08-AE1D-0EC4199C859C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{42CD37A4-E6F2-4AEA-B0E7-B07DA2F2ED9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pokemons", "Pokemons", "{4C5D69D2-6D57-4ADF-828C-86661DD34967}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{D8FF2FFD-DF96-48A9-BA6F-FB04134E8202}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Application", "Context\Pokemons\Types\Application\Pokemons.Types.Application\Pokemons.Types.Application.csproj", "{B085E714-D4CD-413D-BA8A-9D897292C3BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Domain", "Context\Pokemons\Types\Domain\Pokemons.Types.Domain\Pokemons.Types.Domain.csproj", "{7CBFB2EF-5734-4B6A-9833-C34920C180FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Api", "Context\Pokemons\Types\Infrastructure\Pokemons.Types.Api\Pokemons.Types.Api.csproj", "{29C40A45-04DD-48D6-A841-A8D7C88FA1DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.CliConsole", "Context\Pokemons\Types\Infrastructure\Pokemons.Types.CliConsole\Pokemons.Types.CliConsole.csproj", "{CEECC62E-5444-4A40-8A61-575C522EF932}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Infrastructure", "Context\Pokemons\Types\Infrastructure\Pokemons.Types.Infrastructure\Pokemons.Types.Infrastructure.csproj", "{BAD6AEF9-CE8B-41C0-AB42-B84175004403}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B085E714-D4CD-413D-BA8A-9D897292C3BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B085E714-D4CD-413D-BA8A-9D897292C3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B085E714-D4CD-413D-BA8A-9D897292C3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B085E714-D4CD-413D-BA8A-9D897292C3BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBFB2EF-5734-4B6A-9833-C34920C180FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBFB2EF-5734-4B6A-9833-C34920C180FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBFB2EF-5734-4B6A-9833-C34920C180FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBFB2EF-5734-4B6A-9833-C34920C180FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C40A45-04DD-48D6-A841-A8D7C88FA1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C40A45-04DD-48D6-A841-A8D7C88FA1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C40A45-04DD-48D6-A841-A8D7C88FA1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C40A45-04DD-48D6-A841-A8D7C88FA1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEECC62E-5444-4A40-8A61-575C522EF932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEECC62E-5444-4A40-8A61-575C522EF932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEECC62E-5444-4A40-8A61-575C522EF932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEECC62E-5444-4A40-8A61-575C522EF932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD6AEF9-CE8B-41C0-AB42-B84175004403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD6AEF9-CE8B-41C0-AB42-B84175004403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD6AEF9-CE8B-41C0-AB42-B84175004403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD6AEF9-CE8B-41C0-AB42-B84175004403}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{592BEA23-C037-4F82-ACCA-394D6F3504AD} = {4C5D69D2-6D57-4ADF-828C-86661DD34967}
+		{5ADC31A4-A3CA-412E-B15D-2D7FC704B4BA} = {592BEA23-C037-4F82-ACCA-394D6F3504AD}
+		{DAD1287B-F4A1-4E08-AE1D-0EC4199C859C} = {592BEA23-C037-4F82-ACCA-394D6F3504AD}
+		{42CD37A4-E6F2-4AEA-B0E7-B07DA2F2ED9D} = {592BEA23-C037-4F82-ACCA-394D6F3504AD}
+		{4C5D69D2-6D57-4ADF-828C-86661DD34967} = {D8FF2FFD-DF96-48A9-BA6F-FB04134E8202}
+		{B085E714-D4CD-413D-BA8A-9D897292C3BA} = {5ADC31A4-A3CA-412E-B15D-2D7FC704B4BA}
+		{7CBFB2EF-5734-4B6A-9833-C34920C180FE} = {DAD1287B-F4A1-4E08-AE1D-0EC4199C859C}
+		{29C40A45-04DD-48D6-A841-A8D7C88FA1DC} = {42CD37A4-E6F2-4AEA-B0E7-B07DA2F2ED9D}
+		{CEECC62E-5444-4A40-8A61-575C522EF932} = {42CD37A4-E6F2-4AEA-B0E7-B07DA2F2ED9D}
+		{BAD6AEF9-CE8B-41C0-AB42-B84175004403} = {42CD37A4-E6F2-4AEA-B0E7-B07DA2F2ED9D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47E5EF52-D71F-4F5D-862D-C732056D8F24}
+	EndGlobalSection
+EndGlobal

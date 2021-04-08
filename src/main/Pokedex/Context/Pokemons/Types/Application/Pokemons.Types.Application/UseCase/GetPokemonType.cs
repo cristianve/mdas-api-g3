@@ -1,5 +1,5 @@
-﻿using Pokemons.Types.Application.Response;
-using Pokemons.Types.Domain.Exceptions;
+﻿using Pokemons.Types.Application.Request;
+using Pokemons.Types.Application.Response;
 using Pokemons.Types.Domain.Service;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,12 +15,9 @@ namespace Pokemons.Types.Application.UseCase
             _pokemonTypeRepository = pokemonTypeRepository;
         }
 
-        public async Task<GetPokemonTypeResponse> Execute(string pokemonName)
+        public async Task<GetPokemonTypeResponse> Execute(GetPokemonTypeRequest request)
         {
-            var types = await _pokemonTypeRepository.Find(pokemonName);
-
-            if (types == null)
-                throw new PokemonNotFoundException("Pokemon " + pokemonName + " does not exist");
+            var types = await _pokemonTypeRepository.Find(request.PokemonName);
 
             return new GetPokemonTypeResponse
             {
