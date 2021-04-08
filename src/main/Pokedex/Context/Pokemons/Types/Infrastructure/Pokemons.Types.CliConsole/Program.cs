@@ -1,11 +1,12 @@
-﻿using Pokemons.Types.Application.Request;
-using Pokemons.Types.Application.UseCase;
+﻿using Pokemons.Types.Application.UseCase;
 using Pokemons.Types.CliConsole.Converter;
 using Pokemons.Types.Domain.Exceptions;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Pokemons.Types.Persistence;
+using System.Collections.Generic;
+using Pokemons.Types.Domain.ValueObject;
 
 namespace Pokemons.Types.CliConsole
 {
@@ -28,13 +29,9 @@ namespace Pokemons.Types.CliConsole
             {
                 PokeApiPokemonTypeRepository pokeApiPokemonTypeRepository = new PokeApiPokemonTypeRepository();
                 GetPokemonType getPokemonType = new GetPokemonType(pokeApiPokemonTypeRepository);
-                var response = await getPokemonType.Execute(
-                    new GetPokemonTypeRequest()
-                    {
-                        PokemonName = pokemonName
-                    });
+                IEnumerable<PokemonType> pokemonTypes = await getPokemonType.Execute(pokemonName);
 
-                Console.WriteLine(StringConverter.Execute(response.Types));
+                Console.WriteLine(PokemonTypeToStringConverter.Execute(pokemonTypes));
             }
             catch (PokemonNotFoundException ex)
             {
