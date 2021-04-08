@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Pokemons.Types.Api.Converter;
+using Pokemons.Types.Application.Request;
 using Pokemons.Types.Application.UseCase;
 using Pokemons.Types.Domain.Exceptions;
 
@@ -23,7 +24,11 @@ namespace PokemonType.Api.Controllers
         {
             try
             {
-                var response = await _getPokemonType.Execute(name);
+                var response = await _getPokemonType.Execute(
+                    new GetPokemonTypeRequest()
+                    {
+                        PokemonName = name
+                    });
 
                 return Ok(JsonConverter.Execute(response));
             }

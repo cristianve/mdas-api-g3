@@ -1,4 +1,5 @@
-﻿using Pokemons.Types.Application.UseCase;
+﻿using Pokemons.Types.Application.Request;
+using Pokemons.Types.Application.UseCase;
 using Pokemons.Types.CliConsole.Converter;
 using Pokemons.Types.Domain.Exceptions;
 using Pokemons.Types.Infrastructure;
@@ -12,14 +13,26 @@ namespace Pokemons.Types.CliConsole
     {
         public static async Task Main(string[] args)
         {
-            Console.WriteLine("Enter pokemon name:");
-            var pokemonName = args.Any() ? args.First() : Console.ReadLine();
+            string pokemonName;
+            if (args.Any())
+            {
+                pokemonName = args.First();
+            }
+            else
+            {
+                Console.WriteLine("Enter pokemon name:");
+                pokemonName = Console.ReadLine();
+            }
 
             try
             {
                 PokeApiPokemonTypeRepository pokeApiPokemonTypeRepository = new PokeApiPokemonTypeRepository();
                 GetPokemonType getPokemonType = new GetPokemonType(pokeApiPokemonTypeRepository);
-                var response = await getPokemonType.Execute(pokemonName);
+                var response = await getPokemonType.Execute(
+                    new GetPokemonTypeRequest()
+                    {
+                        PokemonName = pokemonName
+                    });
 
                 Console.WriteLine(StringConverter.Execute(response.Types));
             }
