@@ -1,6 +1,6 @@
 ﻿namespace Pokemons.Types.CliConsole.Converter
 {
-    public class StringConverter
+    public class PokemonTypeToSpplitedStringConverter
     {
         public static string Execute(string[] arrayData)
         {

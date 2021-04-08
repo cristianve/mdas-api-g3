@@ -2,10 +2,10 @@
 using Pokemons.Types.Application.UseCase;
 using Pokemons.Types.CliConsole.Converter;
 using Pokemons.Types.Domain.Exceptions;
-using Pokemons.Types.Infrastructure;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Pokemons.Types.Persistence;
 
 namespace Pokemons.Types.CliConsole
 {

@@ -2,7 +2,7 @@
 
 namespace Pokemons.Types.Api.Converter
 {
-    public class JsonConverter
+    public class JsonConverter 
     {
         public static string Execute(dynamic dynamicData)
         {
