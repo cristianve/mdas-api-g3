@@ -40,6 +40,9 @@
 
 # 3. Install 🔧 
 
+* Dotnet is required to build and run the app, you can downloand from official page:
+- https://dotnet.microsoft.com/download/dotnet/5.0
+
 ## Console 🖥️
 ```git clone https://github.com/CarLoOSX/mdas-api-g3```
 ### Execute the following commands
