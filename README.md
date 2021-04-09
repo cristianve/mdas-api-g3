@@ -37,8 +37,9 @@
     * Application
     * Domain
       *  Value Objects
-![](images/ddd.PNG =100x20)
-![DDD](images/ddd.PNG =50x50)
+
+
+![DDD](images/ddd.PNG){:height="36px" width="36px"}.
 
 # 3. Install 🔧 
 
