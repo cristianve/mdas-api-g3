@@ -38,6 +38,9 @@
     * Domain
       *  Value Objects
 
+
+![DDD](images/ddd.PNG){height=25px width=25px}
+
 # 3. Install 🔧 
 
 * Dotnet is required to build and run the app, you can downloand from official page (we recommend 5.0):
