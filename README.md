@@ -21,17 +21,17 @@
   * Via Endpoint Http Body Json
 * Control exceptions (Pokemon not found, PokeApi is down).
 * The input via argument has to continue to work even if the api is down.
-### Design:
 
+### Design:
 
 * Commits bounded
 * One class per file
 * Create the classes strictly necessary to avoid duplicating the logic of the use case.
 
 
-# 2. Instalación 
+# 2. Install 🔧 
 
-## Console
+## Console 🖥️
 ```git clone https://github.com/CarLoOSX/mdas-api-g3```
 ### Execute the following commands
 ```
@@ -43,7 +43,7 @@ cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.CliCons
 ### Run the app and pass the pokemon as argument
 ```dotnet run charizard```
 
-## Api Rest
+## Api Rest 🌐
 
 ### Execute the following commands
 ```
@@ -57,5 +57,5 @@ cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.Api
 ### Go to
 ```https://localhost:{PORT}/swagger/index.html```
 
-# 3. Resultados
+# 3. Results 📷
 
