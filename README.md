@@ -39,7 +39,7 @@
       *  Value Objects
 
 
-![DDD](images/ddd.PNG){height=25px width=25px}
+![DDD](images/ddd.PNG)
 
 # 3. Install 🔧 
 
