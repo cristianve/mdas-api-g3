@@ -38,7 +38,7 @@
     * Domain
       *  Value Objects
 
-![DDD](images/ddd.PNG)
+![DDD](images/ddd.PNG =50x50)
 
 # 3. Install 🔧 
 
