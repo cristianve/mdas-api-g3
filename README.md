@@ -71,4 +71,9 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ```https://localhost:{PORT}/swagger/index.html```
 
 # 4. Results 📷
+## Charizard example 🔥:
+## Console 🖥️
+![Console CLI](images/console-result.PNG)
 
+## Api Rest 🌐
+![API](images/api-result.png)
