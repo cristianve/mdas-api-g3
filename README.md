@@ -3,12 +3,12 @@
 # PokeApi 🎮 
 
 
-# Contenido 📇
+# Content 📇
 
-* 1. Idea principal
-* 2. Estructuración de carpetas
-* 2. Instalación 
-* 3. Resultados
+* 1. Challenge
+* 2. Folder structuring
+* 3. Install 
+* 4. Results
 
 
 # 1. Challenge 🤔💭
@@ -29,7 +29,16 @@
 * Create the classes strictly necessary to avoid duplicating the logic of the use case.
 
 
-# 2. Install 🔧 
+# 3. Folder Structure 📂
+
+* Boundend context
+  * Module
+    * Infraestructura
+    * Application
+    * Domain
+      *  Value Objects
+
+# 3. Install 🔧 
 
 ## Console 🖥️
 ```git clone https://github.com/CarLoOSX/mdas-api-g3```
@@ -57,5 +66,5 @@ cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.Api
 ### Go to
 ```https://localhost:{PORT}/swagger/index.html```
 
-# 3. Results 📷
+# 4. Results 📷
 
