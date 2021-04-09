@@ -73,7 +73,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 # 4. Results 📷
 
 ## Console 🖥️
-![Console CLI](images/console-result.png)
+![Console CLI](images/console-result.PNG)
 
 ## Api Rest 🌐
-![Console CLI](images/api-result.png)
+![API](images/api-result.png)
