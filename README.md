@@ -61,7 +61,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.CliCons
 ### Execute the following commands
 ```
 cd mdas-api-g3
-cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.Api
+cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ```
 ### Compile the app
 ```dotnet build Pokemons.Types.Api.csproj```
