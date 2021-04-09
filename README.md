@@ -40,12 +40,16 @@
 
 # 3. Install 🔧 
 
+* Dotnet is required to build and run the app, you can downloand from official page (we recommend 5.0):
+https://dotnet.microsoft.com/download/dotnet/5.0
+
+
 ## Console 🖥️
 ```git clone https://github.com/CarLoOSX/mdas-api-g3```
 ### Execute the following commands
 ```
 cd mdas-api-g3
-cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.CliConsole
+cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.CliConsole/
 ```
 ### Compile the app
 ```dotnet build Pokemons.Types.CliConsole.csproj```
@@ -57,7 +61,7 @@ cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.CliCons
 ### Execute the following commands
 ```
 cd mdas-api-g3
-cd src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.Api
+cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ```
 ### Compile the app
 ```dotnet build Pokemons.Types.Api.csproj```
