@@ -5,8 +5,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Pokemons.Types.Persistence;
-using System.Collections.Generic;
-using Pokemons.Types.Domain.ValueObject;
+using Pokemons.Types.Domain.Aggregate;
 
 namespace Pokemons.Types.CliConsole
 {
@@ -29,9 +28,9 @@ namespace Pokemons.Types.CliConsole
             {
                 PokeApiPokemonTypeRepository pokeApiPokemonTypeRepository = new PokeApiPokemonTypeRepository();
                 GetPokemonType getPokemonType = new GetPokemonType(pokeApiPokemonTypeRepository);
-                IEnumerable<PokemonType> pokemonTypes = await getPokemonType.Execute(pokemonName);
+                PokemonType pokemonType = await getPokemonType.Execute(pokemonName);
 
-                Console.WriteLine(PokemonTypeToStringConverter.Execute(pokemonTypes));
+                Console.WriteLine(PokemonTypeToStringConverter.Execute(pokemonType));
             }
             catch (PokemonNotFoundException ex)
             {

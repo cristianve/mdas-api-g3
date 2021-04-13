@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Pokemons.Types.Api.Converter;
 using Pokemons.Types.Application.UseCase;
 using Pokemons.Types.Domain.Exceptions;
 
@@ -22,7 +23,9 @@ namespace Pokemons.Types.Api.Controllers
         {
             try
             {
-                return Ok(await _getPokemonType.Execute(name));
+                return Ok(PokemonTypeToJsonConverter.Execute(
+                    await _getPokemonType.Execute(name)
+                    ));
             }
             catch (PokemonNotFoundException ex)
             {

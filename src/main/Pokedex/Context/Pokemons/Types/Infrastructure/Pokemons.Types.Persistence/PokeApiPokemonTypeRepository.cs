@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using Pokemons.Types.Domain.Aggregate;
 using Pokemons.Types.Domain.Exceptions;
 using Pokemons.Types.Domain.Service;
 using Pokemons.Types.Domain.ValueObject;
@@ -19,19 +20,21 @@ namespace Pokemons.Types.Persistence
             _httpClient = new HttpClient();
         }
 
-        public async Task<IEnumerable<PokemonType>> Find(string pokemonName)
+        public async Task<PokemonType> Find(string pokemonName)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, API_URL + $"pokemon/{pokemonName}");
             
             try
             {
-                Pokemon pokemon = await Request<Pokemon>(request);
+                var json = await Request(request);
 
-                return pokemon.Types
-                   .Select(s => new PokemonType
-                   {
-                       Name = s.Type.Name
-                   });
+                return new PokemonType()
+                {
+                    Types = json["types"].Values("type").Select(x => new Type
+                    {
+                        Name = x["name"].ToString()
+                    }).ToList()
+                };
             }
             catch (PokeApiException ex)
             {
@@ -44,7 +47,7 @@ namespace Pokemons.Types.Persistence
             }
         }
 
-        private async Task<T> Request<T>(HttpRequestMessage request)
+        private async Task<JObject> Request(HttpRequestMessage request)
         {
             using (var response = await _httpClient
                         .SendAsync(request, HttpCompletionOption.ResponseHeadersRead)
@@ -57,12 +60,9 @@ namespace Pokemons.Types.Persistence
                 }
 
                 var stream = await response.Content.ReadAsStreamAsync();
-                var _options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
 
-                return await JsonSerializer.DeserializeAsync<T>(stream, _options);
+                StreamReader reader = new StreamReader(stream);
+                return JObject.Parse(reader.ReadToEnd());
             }
         }
     }

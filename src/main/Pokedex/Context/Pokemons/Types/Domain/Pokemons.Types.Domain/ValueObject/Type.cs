@@ -1,6 +1,6 @@
 ﻿namespace Pokemons.Types.Domain.ValueObject
 {
-    public class PokemonType
+    public class Type
     {
         public string Name { get; set; }
     }
