@@ -40,7 +40,7 @@
 
 ![Structure](images/project-structure.png)
 
-![](images/project-structure.png =100x20)
+![](images/project-structure.png){:height="50%" width="50%"}
 
 ![DDD](images/ddd.PNG)
 
