@@ -31,12 +31,12 @@
 
 # 3. Folder Structure 📂
 
-* **Boundend context**: Objetivo dividir y aislar los modelos de dominio.
-  * **Module**: Conceptos dentro de un bounded context.
-    * **Capa Infraestructura**
-    * **Capa Application**
-    * **Capa Domain**
-      *  **Value Objects**: Objetos de nuestra aplicación.
+* **Boundend context**: Objective to divide and isolate domain models.
+  * **Module**: Concepts within a bounded context.
+    * ** Infraestructura Layer**
+    * ** Application Layer**
+    * ** Domain Layer**
+      *  **Value Objects**: Objects of our application.
 
 <img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
 
