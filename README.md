@@ -39,6 +39,8 @@
       *  **Value Objects**: Objetos de nuestra aplicación.
 
 <img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
+
+**DDD Layers:**
 <img src="images/ddd.PNG" width="15%" height="15%" alt="DDD">
 
 
