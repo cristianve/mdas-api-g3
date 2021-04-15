@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Pokemons.Types.Domain.ValueObject;
+﻿using System.Threading.Tasks;
+using Pokemons.Types.Domain.Aggregate;
 
 namespace Pokemons.Types.Domain.Service
 {
     public interface IPokemonTypeRepository
     {
-        Task<IEnumerable<PokemonType>> Find(string pokemonName);
+        Task<PokemonType> Find(string pokemonName);
     }
 }

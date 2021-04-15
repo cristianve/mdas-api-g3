@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using Pokemons.Types.Domain.Service;
+﻿using Pokemons.Types.Domain.Service;
 using System.Threading.Tasks;
-using Pokemons.Types.Domain.ValueObject;
+using Pokemons.Types.Domain.Aggregate;
 
 namespace Pokemons.Types.Application.UseCase
 {
@@ -14,7 +13,7 @@ namespace Pokemons.Types.Application.UseCase
             _pokemonTypeRepository = pokemonTypeRepository;
         }
 
-        public Task<IEnumerable<PokemonType>> Execute(string pokemonName)
+        public Task<PokemonType> Execute(string pokemonName)
         {
             return _pokemonTypeRepository.Find(pokemonName);
         }
