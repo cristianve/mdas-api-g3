@@ -40,6 +40,8 @@
 
 ![Structure](images/project-structure.png)
 
+![](images/project-structure.png =100x20)
+
 ![DDD](images/ddd.PNG)
 
 # 3. Install 🔧 
