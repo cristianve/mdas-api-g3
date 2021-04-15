@@ -38,6 +38,7 @@
     * Capa Domain
       *  Value Objects: Objetos de nuestra aplicación
 
+![Structure](images/project-structure.png)
 
 ![DDD](images/ddd.PNG)
 
@@ -78,5 +79,5 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ## Console 🖥️
 ![Console CLI](images/console-result.PNG)
 
-## Api Rest 🌐
-![API](images/api-result.png)
+## Swagger - Api Rest 🌐
+![SwaggerAPI](images/swagger.png)
