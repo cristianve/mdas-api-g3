@@ -38,8 +38,8 @@
     * Capa Domain
       *  Value Objects: Objetos de nuestra aplicación
 
-<img src="images/project-structure.png" width="500" height="500" alt="Structure">
-<img src="images/ddd.PNG" width="500" height="500" alt="DDD">
+<img src="images/project-structure.png" width="700" height="300" alt="Structure">
+<img src="images/ddd.PNG" width="250" height="250" alt="DDD">
 
 
 # 3. Install 🔧 
