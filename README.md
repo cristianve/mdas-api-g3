@@ -39,7 +39,7 @@
       *  Value Objects: Objetos de nuestra aplicación
 
 <img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
-<img src="images/ddd.PNG" width="75%" height="75%" alt="DDD">
+<img src="images/ddd.PNG" width="25%" height="25%" alt="DDD">
 
 
 # 3. Install 🔧 
