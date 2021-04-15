@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -31,10 +30,12 @@ namespace Pokemons.Types.Persistence
 
                 return new PokemonTypes()
                 {
-                    
-                    Types = json["types"].Values("type").Select(x => new PokemonTypeName()
+                    Types = json["types"].Values("type").Select(x => new PokemonType
                     {
-                        Name = x["name"].ToString()
+                        PokemonTypeName = new PokemonTypeName()
+                        {
+                            Name = x["name"].ToString()
+                        }
                     }).ToList()
                 };
             }
