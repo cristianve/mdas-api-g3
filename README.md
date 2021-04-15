@@ -31,12 +31,12 @@
 
 # 3. Folder Structure 📂
 
-* Boundend context
-  * Module
-    * Infraestructura
-    * Application
-    * Domain
-      *  Value Objects
+* Boundend context: Objetivo dividir y aislar los modelos de dominio
+  * Module: Conceptos dentro de un bounded context
+    * Capa Infraestructura
+    * Capa Application
+    * Capa Domain
+      *  Value Objects: Objetos de nuestra aplicación
 
 
 ![DDD](images/ddd.PNG)
