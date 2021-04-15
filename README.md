@@ -33,9 +33,9 @@
 
 * **Boundend context**: Objective to divide and isolate domain models.
   * **Module**: Concepts within a bounded context.
-    * ** Infraestructura Layer**
-    * ** Application Layer**
-    * ** Domain Layer**
+    * **Infraestructura Layer**
+    * **Application Layer**
+    * **Domain Layer**
       *  **Value Objects**: Objects of our application.
 
 <img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
