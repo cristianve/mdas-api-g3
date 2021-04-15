@@ -20,7 +20,7 @@ namespace Pokemons.Types.Persistence
             _httpClient = new HttpClient();
         }
 
-        public async Task<PokemonType> Find(string pokemonName)
+        public async Task<PokemonTypes> Find(string pokemonName)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, API_URL + $"pokemon/{pokemonName}");
             
@@ -28,11 +28,14 @@ namespace Pokemons.Types.Persistence
             {
                 var json = await Request(request);
 
-                return new PokemonType()
+                return new PokemonTypes()
                 {
-                    Types = json["types"].Values("type").Select(x => new Type
+                    Types = json["types"].Values("type").Select(x => new PokemonType
                     {
-                        Name = x["name"].ToString()
+                        PokemonTypeName = new PokemonTypeName()
+                        {
+                            Name = x["name"].ToString()
+                        }
                     }).ToList()
                 };
             }

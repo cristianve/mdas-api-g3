@@ -23,9 +23,7 @@ namespace Pokemons.Types.Api.Controllers
         {
             try
             {
-                return Ok(PokemonTypeToJsonConverter.Execute(
-                    await _getPokemonType.Execute(name)
-                    ));
+                return Ok(PokemonTypeToJsonConverter.Execute(await _getPokemonType.Execute(name)));
             }
             catch (PokemonNotFoundException ex)
             {
