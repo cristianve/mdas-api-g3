@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ using Pokemons.Types.Domain.ValueObject;
 
 namespace Pokemons.Types.Persistence
 {
-    public class PokeApiPokemonTypeRepository : IPokemonTypeRepository
+    public class PokeApiPokemonTypeRepository : PokemonTypeRepository
     {
         private const string API_URL = "https://pokeapi.co/api/v2/";
         private HttpClient _httpClient;
@@ -20,9 +21,9 @@ namespace Pokemons.Types.Persistence
             _httpClient = new HttpClient();
         }
 
-        public async Task<PokemonTypes> Find(string pokemonName)
+        public async Task<PokemonTypes> Search(PokemonName pokemonName)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, API_URL + $"pokemon/{pokemonName}");
+            var request = new HttpRequestMessage(HttpMethod.Get, API_URL + $"pokemon/{pokemonName.Name}");
             
             try
             {
@@ -39,33 +40,45 @@ namespace Pokemons.Types.Persistence
                     }).ToList()
                 };
             }
-            catch (PokeApiException ex)
+            catch (PokeApiNotFoundException ex)
             {
-                if (ex.StatusCode == 404)
-                {
-                    throw new PokemonNotFoundException("Pokemon " + pokemonName + " does not exist");
-                }
-
-                throw;
+                throw new PokemonNotFoundException(){ PokemonName = pokemonName.Name };
             }
         }
 
         private async Task<JObject> Request(HttpRequestMessage request)
         {
-            using (var response = await _httpClient
+            try
+            {
+                using (var response = await _httpClient
                         .SendAsync(request, HttpCompletionOption.ResponseHeadersRead)
                         .ConfigureAwait(false))
-            {
-                if (response.IsSuccessStatusCode == false)
                 {
-                    var message = await response.Content.ReadAsStringAsync();
-                    throw new PokeApiException(message, (int)response.StatusCode);
+                    if (response.IsSuccessStatusCode == false)
+                    {
+                        var message = await response.Content.ReadAsStringAsync();
+
+                        if ((int)response.StatusCode == 404)
+                        {
+                            throw new PokeApiNotFoundException(message);
+                        }
+
+                        throw new Exception(message);
+                    }
+
+                    var stream = await response.Content.ReadAsStreamAsync();
+
+                    StreamReader reader = new StreamReader(stream);
+                    return JObject.Parse(reader.ReadToEnd());
                 }
-
-                var stream = await response.Content.ReadAsStreamAsync();
-
-                StreamReader reader = new StreamReader(stream);
-                return JObject.Parse(reader.ReadToEnd());
+            }
+            catch (PokeApiNotFoundException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw new PokeApiException();
             }
         }
     }

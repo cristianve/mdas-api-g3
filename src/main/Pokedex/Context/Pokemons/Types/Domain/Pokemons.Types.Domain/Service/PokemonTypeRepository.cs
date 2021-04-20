@@ -3,8 +3,8 @@ using Pokemons.Types.Domain.ValueObject;
 
 namespace Pokemons.Types.Domain.Service
 {
-    public interface IPokemonTypeRepository
+    public interface PokemonTypeRepository
     {
-        Task<PokemonTypes> Find(string pokemonName);
+        Task<PokemonTypes> Search(PokemonName pokemonName);
     }
 }
