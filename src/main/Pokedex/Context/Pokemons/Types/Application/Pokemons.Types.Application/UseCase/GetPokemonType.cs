@@ -6,16 +6,16 @@ namespace Pokemons.Types.Application.UseCase
 {
     public class GetPokemonType
     {
-        private IPokemonTypeRepository _pokemonTypeRepository;
+        private PokemonTypeSearcher _pokemonTypeSearcher;
 
-        public GetPokemonType(IPokemonTypeRepository pokemonTypeRepository)
+        public GetPokemonType(PokemonTypeSearcher pokemonTypeSearcher)
         {
-            _pokemonTypeRepository = pokemonTypeRepository;
+            _pokemonTypeSearcher = pokemonTypeSearcher;
         }
 
         public Task<PokemonTypes> Execute(string pokemonName)
         {
-            return _pokemonTypeRepository.Find(pokemonName);
+            return _pokemonTypeSearcher.Execute(new PokemonName() { Name = pokemonName });
         }
     }
 }

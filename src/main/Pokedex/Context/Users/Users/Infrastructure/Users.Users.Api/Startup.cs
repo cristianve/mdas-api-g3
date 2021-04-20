@@ -4,11 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Pokemons.Types.Application.UseCase;
-using Pokemons.Types.Domain.Service;
-using Pokemons.Types.Persistence;
+using Users.Users.Application.UseCase;
+using Users.Users.Domain.Service;
+using Users.Users.Persistence;
 
-namespace Pokemons.Types.Api
+namespace Users.Users.Api
 {
     public class Startup
     {
@@ -25,11 +25,13 @@ namespace Pokemons.Types.Api
             ConfigureUseCases(services);
             ConfigureDomainServices(services);
             ConfigureRepositories(services);
+            ConfigureCache(services);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pokemon.Type.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Users.Users.Api", Version = "v1" });
+            
             });
         }
 
@@ -40,7 +42,7 @@ namespace Pokemons.Types.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pokemon.Type.Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Users.Users.Api v1"));
             }
 
             app.UseHttpsRedirection();
@@ -57,17 +59,24 @@ namespace Pokemons.Types.Api
 
         private void ConfigureUseCases(IServiceCollection services)
         {
-            services.AddScoped<GetPokemonType>();
+            services.AddScoped<AddPokemonToFavorites>();
+            services.AddScoped<GetPokemonFavorites>();
         }
 
         private void ConfigureDomainServices(IServiceCollection services)
         {
-            services.AddScoped<PokemonTypeSearcher>();
+            services.AddScoped<PokemonFavoriteCreator>();
+            services.AddScoped<PokemonFavoriteSearcher>();
         }
 
         private void ConfigureRepositories(IServiceCollection services)
         {
-            services.AddScoped<PokemonTypeRepository, PokeApiPokemonTypeRepository>();
+            services.AddScoped<UserRepository, InMemoryUserRepository>();
+        }
+
+        private void ConfigureCache(IServiceCollection services)
+        {
+            services.AddMemoryCache();
         }
     }
 }
