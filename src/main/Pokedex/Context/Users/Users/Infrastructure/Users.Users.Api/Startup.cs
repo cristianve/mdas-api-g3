@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Users.Users.Application.UseCase;
+using Users.Users.Domain.Service;
+using Users.Users.Persistence;
 
 namespace Users.Users.Api
 {
@@ -26,11 +22,16 @@ namespace Users.Users.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureUseCases(services);
+            ConfigureDomainServices(services);
+            ConfigureRepositories(services);
+            ConfigureCache(services);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Users.Users.Api", Version = "v1" });
+            
             });
         }
 
@@ -54,6 +55,28 @@ namespace Users.Users.Api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private void ConfigureUseCases(IServiceCollection services)
+        {
+            services.AddScoped<AddPokemonToFavorites>();
+            services.AddScoped<GetPokemonFavorites>();
+        }
+
+        private void ConfigureDomainServices(IServiceCollection services)
+        {
+            services.AddScoped<PokemonFavoriteCreator>();
+            services.AddScoped<PokemonFavoriteSearcher>();
+        }
+
+        private void ConfigureRepositories(IServiceCollection services)
+        {
+            services.AddScoped<UserRepository, InMemoryUserRepository>();
+        }
+
+        private void ConfigureCache(IServiceCollection services)
+        {
+            services.AddMemoryCache();
         }
     }
 }
