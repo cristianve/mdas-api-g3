@@ -11,9 +11,9 @@ namespace Pokemons.Types.Api.Controllers
     [Route("pokedex")]
     public class PokemonTypeController : ControllerBase
     {
-        private readonly GetPokemonType _getPokemonType;
+        private readonly GetPokemonTypes _getPokemonType;
 
-        public PokemonTypeController(GetPokemonType getPokemonType)
+        public PokemonTypeController(GetPokemonTypes getPokemonType)
         {
             _getPokemonType = getPokemonType;
         }

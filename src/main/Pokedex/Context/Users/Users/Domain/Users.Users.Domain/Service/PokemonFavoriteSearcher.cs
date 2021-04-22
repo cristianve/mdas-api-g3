@@ -16,7 +16,7 @@ namespace Users.Users.Domain.Service
 
         public async Task<List<PokemonFavorite>> Execute(User user)
         {
-            var userFound = await _userRepository.FindUser(user);
+            var userFound = await _userRepository.FindUserWithFavorites(user);
 
             if (userFound == null)
             {

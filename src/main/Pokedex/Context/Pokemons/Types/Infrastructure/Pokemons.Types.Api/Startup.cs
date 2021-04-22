@@ -57,7 +57,7 @@ namespace Pokemons.Types.Api
 
         private void ConfigureUseCases(IServiceCollection services)
         {
-            services.AddScoped<GetPokemonType>();
+            services.AddScoped<GetPokemonTypes>();
         }
 
         private void ConfigureDomainServices(IServiceCollection services)

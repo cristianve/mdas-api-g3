@@ -20,7 +20,7 @@ namespace Users.Users.Persistence
         public async Task<PokemonFavorite> AddFavorite(User user)
         {
             var cacheKey = GetCacheKey(user.UserId.Id);
-            User userFound = await FindUser(user);
+            User userFound = await FindUserWithFavorites(user);
 
             if (userFound != null)
             {
@@ -35,7 +35,7 @@ namespace Users.Users.Persistence
             return user.PokemonFavorites.FirstOrDefault();
         }
 
-        public async Task<User> FindUser(User user)
+        public async Task<User> FindUserWithFavorites(User user)
         {
             var cacheKey = GetCacheKey(user.UserId.Id);
 
@@ -47,7 +47,7 @@ namespace Users.Users.Persistence
 
         public async Task<bool> FavoriteExistsInUser(User user)
         {
-            User userFound = await FindUser(user);
+            User userFound = await FindUserWithFavorites(user);
 
             if (userFound == null)
             {

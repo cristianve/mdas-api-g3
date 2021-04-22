@@ -42,7 +42,7 @@ namespace Pokemons.Types.Persistence
             }
             catch (PokeApiNotFoundException ex)
             {
-                throw new PokemonNotFoundException(){ PokemonName = pokemonName.Name };
+                return null;
             }
         }
 

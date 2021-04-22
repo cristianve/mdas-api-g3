@@ -1,4 +1,5 @@
-﻿using Pokemons.Types.Domain.ValueObject;
+﻿using Pokemons.Types.Domain.Exceptions;
+using Pokemons.Types.Domain.ValueObject;
 using System.Threading.Tasks;
 
 namespace Pokemons.Types.Domain.Service
@@ -12,9 +13,16 @@ namespace Pokemons.Types.Domain.Service
             _pokemonTypeRepository = pokemonTypeRepository;
         }
 
-        public Task<PokemonTypes> Execute(PokemonName pokemonName)
+        public async Task<PokemonTypes> Execute(PokemonName pokemonName)
         {
-            return _pokemonTypeRepository.Search(pokemonName);
+            PokemonTypes pokemonTypes = await _pokemonTypeRepository.Search(pokemonName);
+
+            if (pokemonTypes == null)
+            {
+                throw new PokemonNotFoundException() { PokemonName = pokemonName.Name };
+            }
+
+            return pokemonTypes;
         }
     }
 }

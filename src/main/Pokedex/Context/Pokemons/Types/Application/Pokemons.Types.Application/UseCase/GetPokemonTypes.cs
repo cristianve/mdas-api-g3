@@ -4,11 +4,11 @@ using Pokemons.Types.Domain.ValueObject;
 
 namespace Pokemons.Types.Application.UseCase
 {
-    public class GetPokemonType
+    public class GetPokemonTypes
     {
         private PokemonTypeSearcher _pokemonTypeSearcher;
 
-        public GetPokemonType(PokemonTypeSearcher pokemonTypeSearcher)
+        public GetPokemonTypes(PokemonTypeSearcher pokemonTypeSearcher)
         {
             _pokemonTypeSearcher = pokemonTypeSearcher;
         }

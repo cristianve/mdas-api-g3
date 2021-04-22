@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Pokemons\Types\Application\Pokemons.Types.Application\Pokemons.Types.Application.csproj" />
-    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Pokemons\Types\Domain\Pokemons.Types.Domain\Pokemons.Types.Domain.csproj" />
-    <ProjectReference Include="..\..\Domain\Pokemons.Types.Domain.Test\Pokemons.Types.Domain.Test.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Users\Users\Domain\Users.Users.Domain\Users.Users.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Users\Users\Application\Users.Users.Application\Users.Users.Application.csproj" />
+    <ProjectReference Include="..\..\Domain\Users.Users.Domain.Test\Users.Users.Domain.Test.csproj" />
   </ItemGroup>
 
 </Project>
