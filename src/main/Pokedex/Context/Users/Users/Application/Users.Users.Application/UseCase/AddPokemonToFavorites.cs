@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Service;
 using Users.Users.Domain.ValueObject;

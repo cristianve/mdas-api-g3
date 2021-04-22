@@ -30,7 +30,7 @@ namespace Pokemons.Types.CliConsole
                 PokeApiPokemonTypeRepository pokeApiPokemonTypeRepository = new PokeApiPokemonTypeRepository();
                 PokemonTypeSearcher pokemonTypeSearcher = new PokemonTypeSearcher(pokeApiPokemonTypeRepository);
 
-                GetPokemonType getPokemonType = new GetPokemonType(pokemonTypeSearcher);
+                GetPokemonTypes getPokemonType = new GetPokemonTypes(pokemonTypeSearcher);
                 PokemonTypes pokemonTypes = await getPokemonType.Execute(pokemonName);
 
                 Console.WriteLine(PokemonTypeToStringConverter.Execute(pokemonTypes));

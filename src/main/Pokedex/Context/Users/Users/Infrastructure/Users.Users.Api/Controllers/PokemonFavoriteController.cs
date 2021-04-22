@@ -28,6 +28,10 @@ namespace Users.Users.Api.Controllers
             {
                 return Accepted(await _addPokemonToFavorites.Execute(userId, pokemonName));
             }
+            catch (PokemonFavoriteIsEmptyException ex)
+            {
+                return NotFound(ex.Message);
+            }
             catch (PokemonFavoriteExistsException ex)
             {
                 return Conflict(ex.Message);

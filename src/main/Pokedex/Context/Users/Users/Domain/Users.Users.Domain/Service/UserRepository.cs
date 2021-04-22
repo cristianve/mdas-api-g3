@@ -7,7 +7,7 @@ namespace Users.Users.Domain.Service
     public interface UserRepository
     {
         Task<PokemonFavorite> AddFavorite(User user);
-        Task<User> FindUser(User user);
+        Task<User> FindUserWithFavorites(User user);
         Task<bool> FavoriteExistsInUser(User user);
     }
 }

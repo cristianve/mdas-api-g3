@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using Users.Users.Domain.Exceptions;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Aggregate
 {
     public class User
     {
-        public UserId UserId { get; set; }
-        public List<PokemonFavorite> PokemonFavorites { get; set; }
+        public UserId UserId { get; }
+        public List<PokemonFavorite> PokemonFavorites { get; private set; }
 
         public User(string userId)
         {
@@ -26,6 +27,12 @@ namespace Users.Users.Domain.Aggregate
             };
 
             PokemonFavorites = new List<PokemonFavorite>();
+
+            if (string.IsNullOrEmpty(pokemonName))
+            {
+                throw new PokemonFavoriteIsEmptyException();
+            }
+
             PokemonFavorites.Add(new PokemonFavorite() { PokemonName = pokemonName });
         }
 
