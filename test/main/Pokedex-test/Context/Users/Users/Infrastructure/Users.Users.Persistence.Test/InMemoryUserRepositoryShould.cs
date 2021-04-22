@@ -1,7 +1,6 @@
-using System;
 using Xunit;
 
-namespace Users.Users.Infrastructure.Test
+namespace Users.Users.Persistence.Test
 {
     public class InMemoryUserRepositoryShould
     {

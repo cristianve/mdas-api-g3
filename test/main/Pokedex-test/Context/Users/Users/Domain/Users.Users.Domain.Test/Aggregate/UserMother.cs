@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Users.Users.Domain.Entities;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Test.Aggregate

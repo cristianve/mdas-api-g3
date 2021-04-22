@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Users.Users.Domain.Entities;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Test.ValueObject

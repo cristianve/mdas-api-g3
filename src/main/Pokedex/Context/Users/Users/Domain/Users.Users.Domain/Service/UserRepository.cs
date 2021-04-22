@@ -1,13 +1,10 @@
-﻿using System.Threading.Tasks;
-using Users.Users.Domain.Aggregate;
-using Users.Users.Domain.ValueObject;
+﻿using Users.Users.Domain.Aggregate;
 
 namespace Users.Users.Domain.Service
 {
     public interface UserRepository
     {
-        Task<PokemonFavorite> AddFavorite(User user);
-        Task<User> FindUserWithFavorites(User user);
-        Task<bool> FavoriteExistsInUser(User user);
+        public void Save(User user);
+        public User Find(string userId);
     }
 }

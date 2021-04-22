@@ -11,24 +11,50 @@ namespace Users.Users.Api.Controllers
     [Route("pokedex")]
     public class PokemonFavoriteController : ControllerBase
     {
-        private readonly AddPokemonToFavorites _addPokemonToFavorites;
-        private readonly GetPokemonFavorites _getPokemonFavorites;
+        private readonly CreateUser _createUser;
+        private readonly AddPokemonToUserFavorites _addPokemonToUserFavorites;
+        private readonly GetPokemonUserFavorites _getPokemonUserFavorites;
 
-        public PokemonFavoriteController(AddPokemonToFavorites addPokemonToFavorites,
-            GetPokemonFavorites getPokemonFavorites)
+        public PokemonFavoriteController(CreateUser createUser, AddPokemonToUserFavorites addPokemonToUserFavorites,
+            GetPokemonUserFavorites getPokemonUserFavorites)
         {
-            _addPokemonToFavorites = addPokemonToFavorites;
-            _getPokemonFavorites = getPokemonFavorites;
+            _createUser = createUser;
+            _addPokemonToUserFavorites = addPokemonToUserFavorites;
+            _getPokemonUserFavorites = getPokemonUserFavorites;
         }
 
-        [HttpPut("favorites/{pokemonName}")]
-        public async Task<IActionResult> Put([Required][FromHeader(Name = "userId")] string userId, string pokemonName)
+        [HttpPost("user/create")]
+        public async Task<IActionResult> Post(string userId)
         {
             try
             {
-                return Accepted(await _addPokemonToFavorites.Execute(userId, pokemonName));
+                _createUser.Execute(userId);
+                return Ok();
             }
-            catch (PokemonFavoriteIsEmptyException ex)
+            catch (InvalidUserException ex)
+            {
+                return Conflict(ex.Message);
+            }
+            catch (UserExistsException ex)
+            {
+                return Conflict(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpPut("user/addFavorite/{pokemonName}")]
+        public async Task<IActionResult> Put([Required] [FromHeader(Name = "userId")]
+            string userId, string pokemonName)
+        {
+            try
+            {
+                _addPokemonToUserFavorites.Execute(userId, pokemonName);
+                return Accepted();
+            }
+            catch (UserNotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
@@ -42,12 +68,13 @@ namespace Users.Users.Api.Controllers
             }
         }
 
-        [HttpGet("favorites")]
-        public async Task<IActionResult> Get([Required][FromHeader(Name = "userId")] string userId)
+        [HttpGet("user/favorites")]
+        public async Task<IActionResult> Get([Required] [FromHeader(Name = "userId")]
+            string userId)
         {
             try
             {
-                return Ok(await _getPokemonFavorites.Execute(userId));
+                return Ok(_getPokemonUserFavorites.Execute(userId));
             }
             catch (Exception ex)
             {

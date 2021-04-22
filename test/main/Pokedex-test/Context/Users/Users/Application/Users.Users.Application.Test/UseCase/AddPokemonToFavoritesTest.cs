@@ -2,9 +2,9 @@ using Moq;
 using System.Threading.Tasks;
 using Users.Users.Application.UseCase;
 using Users.Users.Domain.Aggregate;
+using Users.Users.Domain.Entities;
 using Users.Users.Domain.Service;
 using Users.Users.Domain.Test.ValueObject;
-using Users.Users.Domain.ValueObject;
 using Xunit;
 
 namespace Users.Users.Application.Test.UseCase

@@ -30,8 +30,7 @@ namespace Users.Users.Api
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Users.Users.Api", Version = "v1" });
-            
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Users.Users.Api", Version = "v1"});
             });
         }
 
@@ -51,21 +50,20 @@ namespace Users.Users.Api
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
 
         private void ConfigureUseCases(IServiceCollection services)
         {
-            services.AddScoped<AddPokemonToFavorites>();
-            services.AddScoped<GetPokemonFavorites>();
+            services.AddScoped<CreateUser>();
+            services.AddScoped<AddPokemonToUserFavorites>();
+            services.AddScoped<GetPokemonUserFavorites>();
         }
 
         private void ConfigureDomainServices(IServiceCollection services)
         {
-            services.AddScoped<PokemonFavoriteCreator>();
+            services.AddScoped<UserCreator>();
+            services.AddScoped<UserFinder>();
             services.AddScoped<PokemonFavoriteSearcher>();
         }
 

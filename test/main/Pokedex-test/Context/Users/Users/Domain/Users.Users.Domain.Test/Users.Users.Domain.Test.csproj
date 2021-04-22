@@ -21,7 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Users\Users\Domain\Users.Users.Domain\Users.Users.Domain.csproj" />
+    <Reference Include="PokemonType.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\..\..\..\src\PokemonType\Domain\PokemonType.Domain\bin\Debug\netstandard2.1\PokemonType.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Users.Users.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null, ProcessorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Users\Users\Domain\Users.Users.Domain\bin\Debug\net5.0\Users.Users.Domain.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

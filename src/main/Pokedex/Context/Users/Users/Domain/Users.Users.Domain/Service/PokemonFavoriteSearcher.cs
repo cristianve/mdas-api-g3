@@ -1,29 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
-using Users.Users.Domain.ValueObject;
+using Users.Users.Domain.Entities;
 
 namespace Users.Users.Domain.Service
 {
     public class PokemonFavoriteSearcher
     {
-        private UserRepository _userRepository;
-
-        public PokemonFavoriteSearcher(UserRepository userRepository)
+        public List<PokemonFavorite> Execute(User user)
         {
-            _userRepository = userRepository;
-        }
-
-        public async Task<List<PokemonFavorite>> Execute(User user)
-        {
-            var userFound = await _userRepository.FindUserWithFavorites(user);
-
-            if (userFound == null)
-            {
-                return new List<PokemonFavorite>();
-            }
-
-            return userFound.PokemonFavorites;
+            return user.PokemonFavorites;
         }
     }
 }
