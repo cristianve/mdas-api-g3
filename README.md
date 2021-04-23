@@ -137,9 +137,8 @@ TODO
 ### Execute the following commands
 ```
 cd mdas-api-g3
-TODO
 ```
-### Compile the app
+### Execute test the app
 ```dotnet test  src/main/Pokedex-test```
 
 
