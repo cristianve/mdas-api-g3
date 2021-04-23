@@ -11,38 +11,14 @@ namespace Users.Users.Api.Controllers
     [Route("pokedex")]
     public class PokemonFavoriteController : ControllerBase
     {
-        private readonly CreateUser _createUser;
         private readonly AddPokemonToUserFavorites _addPokemonToUserFavorites;
         private readonly GetPokemonUserFavorites _getPokemonUserFavorites;
 
-        public PokemonFavoriteController(CreateUser createUser, AddPokemonToUserFavorites addPokemonToUserFavorites,
+        public PokemonFavoriteController(AddPokemonToUserFavorites addPokemonToUserFavorites,
             GetPokemonUserFavorites getPokemonUserFavorites)
         {
-            _createUser = createUser;
             _addPokemonToUserFavorites = addPokemonToUserFavorites;
             _getPokemonUserFavorites = getPokemonUserFavorites;
-        }
-
-        [HttpPost("user/create")]
-        public async Task<IActionResult> Post(string userId)
-        {
-            try
-            {
-                _createUser.Execute(userId);
-                return Ok();
-            }
-            catch (InvalidUserException ex)
-            {
-                return Conflict(ex.Message);
-            }
-            catch (UserExistsException ex)
-            {
-                return Conflict(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
         }
 
         [HttpPut("user/addFavorite/{pokemonName}")]

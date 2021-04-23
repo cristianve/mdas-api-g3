@@ -63,6 +63,7 @@ namespace Users.Users.Api
         private void ConfigureDomainServices(IServiceCollection services)
         {
             services.AddScoped<UserCreator>();
+            services.AddScoped<PokemonFavoriteCreator>();
             services.AddScoped<UserFinder>();
             services.AddScoped<PokemonFavoriteSearcher>();
         }

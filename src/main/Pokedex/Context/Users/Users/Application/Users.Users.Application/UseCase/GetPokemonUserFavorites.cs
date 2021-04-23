@@ -11,7 +11,8 @@ namespace Users.Users.Application.UseCase
         private readonly UserFinder _userFinder;
         private readonly PokemonFavoriteSearcher _pokemonFavoriteSearcher;
 
-        public GetPokemonUserFavorites(UserFinder userFinder, PokemonFavoriteSearcher pokemonFavoriteSearcher)
+        public GetPokemonUserFavorites(UserFinder userFinder, 
+            PokemonFavoriteSearcher pokemonFavoriteSearcher)
         {
             _userFinder = userFinder;
             _pokemonFavoriteSearcher = pokemonFavoriteSearcher;

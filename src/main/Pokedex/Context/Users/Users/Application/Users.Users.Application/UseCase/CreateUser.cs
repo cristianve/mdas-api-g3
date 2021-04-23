@@ -13,9 +13,9 @@ namespace Users.Users.Application.UseCase
             _userCreator = userCreator;
         }
 
-        public void Execute(string userId)
+        public async Task Execute(string userId)
         {
-            _userCreator.Execute(User.Create(userId));
+            await _userCreator.Execute(User.Create(userId));
         }
     }
 }

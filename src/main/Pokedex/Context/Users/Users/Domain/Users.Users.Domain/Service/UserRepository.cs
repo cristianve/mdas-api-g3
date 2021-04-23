@@ -9,5 +9,6 @@ namespace Users.Users.Domain.Service
         public Task Save(User user);
         public Task<User> Find(UserId userId);
         public Task<bool> Exists(UserId userId);
+        public Task SaveFavorites(User user);
     }
 }

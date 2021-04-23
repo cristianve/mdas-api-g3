@@ -1,4 +1,5 @@
-﻿using Users.Users.Domain.Aggregate;
+﻿using System.Threading.Tasks;
+using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Exceptions;
 
 namespace Users.Users.Domain.Service
@@ -12,10 +13,10 @@ namespace Users.Users.Domain.Service
             _userRepository = userRepository;
         }
 
-        public void Execute(User user)
+        public async Task Execute(User user)
         {
             GuardUserExists(user);
-            _userRepository.Save(user);
+            await _userRepository.Save(user);
         }
 
         #region private methods

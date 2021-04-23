@@ -4,7 +4,9 @@ using Moq;
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Exceptions;
 using Users.Users.Domain.Service;
+using Users.Users.Domain.Test.Aggregate;
 using Users.Users.Domain.Test.ValueObject;
+using Users.Users.Domain.ValueObject;
 using Xunit;
 
 namespace Users.Users.Domain.Test.Service
@@ -16,13 +18,13 @@ namespace Users.Users.Domain.Test.Service
         {
             #region Given
 
-            string pokemonName = PokemonFavoriteMother.PokemonName();
+            PokemonName pokemonName = PokemonNameMother.PokemonName();
             string userId = UserIdMother.Id();
-            User user = new User(userId, pokemonName);
+            User user = new User(userId);
             var userRepository = new Mock<UserRepository>();
 
             userRepository
-                .Setup(r => r.AddFavorite(It.IsAny<User>()));
+                .Setup(r => r.SaveFavorites(It.IsAny<User>()));
 
             PokemonFavoriteCreator pokemonFavoriteCreator = new PokemonFavoriteCreator(userRepository.Object);
 
@@ -30,50 +32,47 @@ namespace Users.Users.Domain.Test.Service
 
             #region When
 
-            await pokemonFavoriteCreator.Execute(user);
+            await pokemonFavoriteCreator.Execute(user, pokemonName);
 
             #endregion
 
             #region Then
 
-            userRepository.Verify(r => r.AddFavorite(It.IsAny<User>()), Times.Once());
+            userRepository.Verify(r => r.SaveFavorites(It.IsAny<User>()), Times.Once());
 
             #endregion
         }
 
         [Fact]
-        public async Task ShouldShowErrorIfPokemonFavoriteExists()
+        public void ShouldThrowAnExceptionWhenPokemonFavoriteAlreadyExists()
         {
             #region Given
 
-            string pokemonName = PokemonFavoriteMother.PokemonName();
+            PokemonName pokemonName = PokemonNameMother.PokemonName();
             string userId = UserIdMother.Id();
-
-            //new User(userId, pokemonName);
-            User user = new User(userId, pokemonName);
+            string expectedMessage = $"The pokemon '{pokemonName.Name}' already exists in user favorites list";
+            User user = UserMother.UserWithFavorites(userId, pokemonName.Name);
 
             var userRepository = new Mock<UserRepository>();
 
             userRepository
-                .Setup(r => r.AddFavorite(It.IsAny<User>()));
+                .Setup(r => r.Find(It.IsAny<UserId>()))
+                .ReturnsAsync(UserMother.UserWithFavorites(userId, pokemonName.Name));
+
+            userRepository
+                .Setup(r => r.SaveFavorites(It.IsAny<User>()));
 
             PokemonFavoriteCreator pokemonFavoriteCreator = new PokemonFavoriteCreator(userRepository.Object);
 
             #endregion
 
             #region When
-
-            await pokemonFavoriteCreator.Execute(user);
-
-            var result = await pokemonFavoriteCreator.Execute(user);
-
-            var exception = Record.ExceptionAsync(async () => await pokemonFavoriteCreator.Execute(user));
+            var exception = Record.ExceptionAsync(async () => await pokemonFavoriteCreator.Execute(user, pokemonName));
 
             #endregion
 
             #region Then
-
-            Assert.Equal(typeof(PokemonFavoriteExistsException), exception.GetType());
+            Assert.Equal(expectedMessage, exception.Result.Message);
 
             #endregion
         }

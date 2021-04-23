@@ -28,7 +28,6 @@ namespace Users.Users.Persistence
         public async Task<User> Find(UserId userId)
         {
             var cacheKey = GetCacheKey(userId.Id);
-
             return _memoryCache.TryGetValue(cacheKey, out User userFound) ? userFound : null;
         }
 
@@ -39,8 +38,14 @@ namespace Users.Users.Persistence
             return _memoryCache.TryGetValue(cacheKey, out User userFound) ? true : false;
         }
 
-        #region private methods
+        public async Task SaveFavorites(User user)
+        {
+            var cacheKey = GetCacheKey(user.UserId.Id);
+            User userFound = await Find(user.UserId);
+            _memoryCache.Set(cacheKey, userFound);
+        }
 
+        #region private methods
         private string GetCacheKey(string key)
         {
             return CACHE_KEY_PREFIX + key;
