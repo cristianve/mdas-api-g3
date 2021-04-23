@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Users.Users.Domain.Entities;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Test.ValueObject
 {
-    public class PokemonFavoriteMother
+    public class PokemonNameMother
     {
-        private static string _pokemonName = "charizard";
+        private static string _name = "charizard";
         private static Random random = new Random();
         private const int NUM_OF_CHARS = 8;
 
@@ -18,16 +19,21 @@ namespace Users.Users.Domain.Test.ValueObject
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public static string PokemonName()
+        public static string Name()
         {
-            return _pokemonName;
+            return _name;
+        }
+
+        public static PokemonName PokemonName()
+        {
+            return new PokemonName(_name);
         }
 
         public static List<PokemonFavorite> PokemonFavorites()
         {
             return new List<PokemonFavorite>()
             {
-                new PokemonFavorite() { PokemonName = "charizard" }
+                new PokemonFavorite() { PokemonName = new PokemonName("charizard") }
             };
         }
     }

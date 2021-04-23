@@ -2,6 +2,11 @@
 {
     public class UserId
     {
-        public string Id { get; set; }
+        public string Id { get; }
+
+        public UserId(string id)
+        {
+            Id = id;
+        }
     }
 }

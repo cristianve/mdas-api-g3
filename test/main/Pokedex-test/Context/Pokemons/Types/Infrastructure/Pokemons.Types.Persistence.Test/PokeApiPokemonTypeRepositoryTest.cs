@@ -1,12 +1,11 @@
-using Pokemons.Types.Domain.Test.ValueObject;
-using Pokemons.Types.Domain.ValueObject;
-using Pokemons.Types.Persistence;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Pokemons.Types.Domain.Test.ValueObject;
+using Pokemons.Types.Domain.ValueObject;
 using Xunit;
 
-namespace Pokemons.Types.Infrastructure.Test
+namespace Pokemons.Types.Persistence.Test
 {
     public class PokeApiPokemonTypeRepositoryTest
     {
