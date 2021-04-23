@@ -19,7 +19,6 @@ namespace Users.Users.Domain.Aggregate
 
         public static User Create(string userId)
         {
-            GuardUserIdValidation(userId);
             return new User(userId);
         }
 
@@ -34,14 +33,6 @@ namespace Users.Users.Domain.Aggregate
         }
 
         #region private methods
-        private static void GuardUserIdValidation(string userId)
-        {
-            if (string.IsNullOrEmpty(userId))
-            {
-                throw new InvalidUserException();
-            }
-        }
-
         private void GuardPokemonFavoriteExistsInUser(PokemonName pokemonName)
         {
             if (PokemonFavorites.Any(pokemonFavorite => pokemonFavorite.PokemonName.Name == pokemonName.Name))
@@ -49,6 +40,7 @@ namespace Users.Users.Domain.Aggregate
                 throw new PokemonFavoriteExistsException(pokemonName);
             }
         }
+
         #endregion
     }
 }

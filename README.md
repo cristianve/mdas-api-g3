@@ -120,12 +120,12 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ### Execute the following commands
 ```
 cd mdas-api-g3
-TODO
+cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
 ```
 ### Compile the app
-```dotnet build TODO```
+```dotnet build Users.Users.Api.csproj```
 ### Run the app
-```dotnet run TODO```
+```dotnet run Users.Users.Api.csproj```
 ### Go to
 ```https://localhost:{PORT}/swagger/index.html```
 
