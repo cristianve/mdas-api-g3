@@ -11,7 +11,7 @@
 * 4. Results
 
 
-# 1. Challenge 🤔💭
+# 1. Challenge 1 🤔💭
 
 ### Requirements:
 
@@ -27,6 +27,33 @@
 * Commits bounded
 * One class per file
 * Create the classes strictly necessary to avoid duplicating the logic of the use case.
+
+# 2. Challenge 2️ 🤔💭
+
+### Requirements:
+
+Enable management of a user's favorite pokemon via HTTP endpoint, use cases:
+
+* Create new User (saving on local memory).
+* Add pokemons to User. 
+* Unit testing
+
+Conditions:
+
+* We assume that the user is authenticated and we receive his user_id in the header.
+* A user cannot have the same pokemon as favorite more than once.
+* We assume that the pokemon ID exists.
+
+### Design:
+
+* We generate a new **Bounded Content User**, to encapsulate funcionality in a single domain model.
+
+Use cases:
+
+* **AddPokemonToUserFavorite:** Requires UserId and PokemonName, verify that user exist to add the pokemon to favorite.
+* **Create User:** Creates a new User from UserId (ValueObject) on local memory if not exist.
+* **GetPokemonUserFavorite:** From a UserId return the list of favorite pokemons if exist.
+
 
 
 # 3. Folder Structure 📂
