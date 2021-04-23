@@ -96,6 +96,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.CliCons
 ```dotnet build Pokemons.Types.CliConsole.csproj```
 ### Run the app and pass the pokemon as argument
 ```dotnet run charizard```
+
 ---
 
 ## Api Rest 🌐
@@ -111,7 +112,9 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ```dotnet run Pokemons.Types.Api.csproj```
 ### Go to
 ```https://localhost:{PORT}/swagger/index.html```
+
 ---
+
 ## Users API 👤
 ### Execute the following commands
 ```
@@ -124,6 +127,7 @@ TODO
 ```dotnet run TODO```
 ### Go to
 ```https://localhost:{PORT}/swagger/index.html```
+
 ---
 
 # 4. Results 📷
