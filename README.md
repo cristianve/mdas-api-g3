@@ -69,7 +69,7 @@ Use cases:
       *  **Domain Services**
       *  **Value Objects**: Objects of our application.
 
-  <img src="images/project-structure.png" width="50%" height="50%" alt="Structure"><img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
+  <img src="images/project-structure.png" width="50%" height="50%" alt="Structure"><img src="images/user-structure.png" width="50%" height="50%" alt="Structure">
 
 
 **DDD Layers:**  
@@ -139,7 +139,7 @@ cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
 cd mdas-api-g3
 ```
 ### Execute test the app
-```dotnet test  src/main/Pokedex-test```
+```dotnet test  test/main/Pokedex-test```
 
 
 ---
@@ -160,13 +160,12 @@ cd mdas-api-g3
 ## Pokemon Favorites Results  - Challenge 2
 
 ## Create User example 👤:
-//NEED IMAGE UPLOAD
+
 ## Add favorite example ❤️:
 //NEED IMAGE UPLOAD
 ## Get all favorites from user 🔍:
 //NEED IMAGE UPLOAD
 
 ## Swagger User - Api Rest 🌐
-//NEED IMAGE UPLOAD
-
+![Swagger Favorite](images/swagger-user.PNG)
 
