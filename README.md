@@ -6,7 +6,7 @@
 # Content 📇
 
 * 1. Challenge 1 - Pokemons 
-* 2. Challenge 2 - User Favorite 
+* 2. Challenge 2 - Pokemon Favorites
 * 3. Folder structuring
 * 4. Install 
 * 5. Results
@@ -143,7 +143,7 @@ TODO
 
 ---
 
-## User Favorite Results  - Challenge 2
+## Pokemon Favorites Results  - Challenge 2
 
 ## Create User example 👤:
 //NEED IMAGE UPLOAD
