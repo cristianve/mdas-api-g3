@@ -176,5 +176,5 @@ cd mdas-api-g3
 ![Create User](images/getPokemons.PNG)
 
 ## Swagger User - Api Rest 🌐
-![Swagger Favorite](images/swagger.PNG)
+![Swagger Favorite](images/swagger-user.PNG)
 
