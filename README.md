@@ -11,7 +11,7 @@
 * 4. Results
 
 
-# 1. Challenge 1 🤔💭
+# 1. Challenge - Pokemons 1️⃣🤔💭
 
 ### Requirements:
 
@@ -28,7 +28,7 @@
 * One class per file
 * Create the classes strictly necessary to avoid duplicating the logic of the use case.
 
-# 2. Challenge 2️ 🤔💭
+# 2. Challenge 2️⃣ - User Favorite 👤❤️ 
 
 ### Requirements:
 
@@ -90,7 +90,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.CliCons
 ```dotnet run charizard```
 
 ## Api Rest 🌐
-
+## Pokemons API
 ### Execute the following commands
 ```
 cd mdas-api-g3
@@ -103,10 +103,41 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ### Go to
 ```https://localhost:{PORT}/swagger/index.html```
 
+## Users API 👤
+### Execute the following commands
+```
+cd mdas-api-g3
+cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
+```
+### Compile the app
+```dotnet build Users.Types.Api.csproj```
+### Run the app
+```dotnet run Users.Types.Api.csproj```
+### Go to
+```https://localhost:{PORT}/swagger/index.html```
+
+
 # 4. Results 📷
+
+## Pokemons Results
 ## Charizard example 🔥:
 ## Console 🖥️
 ![Console CLI](images/console-result.PNG)
 
 ## Swagger - Api Rest 🌐
 ![SwaggerAPI](images/swagger.png)
+
+
+## User Favorite Results
+
+## Create User example 👤:
+//NEED IMAGE UPLOAD
+## Add favorite example ❤️:
+//NEED IMAGE UPLOAD
+## Get all favorites from user 🔍:
+//NEED IMAGE UPLOAD
+
+## Swagger User - Api Rest 🌐
+//NEED IMAGE UPLOAD
+
+
