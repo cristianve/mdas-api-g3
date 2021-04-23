@@ -1,10 +1,13 @@
-﻿using Users.Users.Domain.Aggregate;
+﻿using System.Threading.Tasks;
+using Users.Users.Domain.Aggregate;
+using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Service
 {
     public interface UserRepository
     {
-        public void Save(User user);
-        public User Find(string userId);
+        public Task Save(User user);
+        public Task<User> Find(UserId userId);
+        public Task<bool> Exists(UserId userId);
     }
 }

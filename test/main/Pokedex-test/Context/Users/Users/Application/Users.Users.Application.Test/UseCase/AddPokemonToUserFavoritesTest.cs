@@ -5,14 +5,15 @@ using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Entities;
 using Users.Users.Domain.Service;
 using Users.Users.Domain.Test.ValueObject;
+using Users.Users.Domain.ValueObject;
 using Xunit;
 
 namespace Users.Users.Application.Test.UseCase
 {
-    public class AddPokemonToFavoritesTest
+    public class AddPokemonToUserFavoritesTest
     {
         [Fact]
-        public async Task AddPokemonToFavorites_ReturnsPokemonFavorite()
+        public async Task AddPokemonToUserFavorites_ReturnsPokemonFavorite()
         {
             #region Arrange
             string pokemonName = PokemonFavoriteMother.PokemonName();
@@ -20,30 +21,25 @@ namespace Users.Users.Application.Test.UseCase
             var userRepository = new Mock<UserRepository>();
 
             userRepository
-                .Setup(r => r.AddFavorite(It.IsAny<User>()))
-                .ReturnsAsync(new PokemonFavorite
-                {
-                    PokemonName = pokemonName
-                });
+                .Setup(r => r.Find(It.IsAny<UserId>()));
 
-            PokemonFavoriteCreator pokemonFavoriteCreator = new PokemonFavoriteCreator(userRepository.Object);
-            AddPokemonToFavorites addPokemonToFavorites = new AddPokemonToFavorites(pokemonFavoriteCreator);
+            UserFinder userFinder = new UserFinder(userRepository.Object);
+            AddPokemonToUserFavorites addPokemonToUserFavorites = new AddPokemonToUserFavorites(userFinder);
 
             #endregion
 
             #region Act
-            PokemonFavorite pokemonFavorite = await addPokemonToFavorites.Execute(userId, pokemonName);
+            await addPokemonToUserFavorites.Execute(userId, pokemonName);
 
             #endregion
 
             #region Assert
-            Assert.Equal(pokemonFavorite.PokemonName, pokemonName);
-
+            userRepository.Verify(r => r.Find(It.IsAny<UserId>()), Times.Once());
             #endregion
         }
 
         [Fact]
-        public async Task AddPokemonToFavorite_ValidPokemonName_AddedToRepository()
+        public async Task AddPokemonToUserFavorites_ValidPokemonName_AddedToRepository()
         {
             #region Arrange
             string pokemonName = PokemonFavoriteMother.PokemonName();

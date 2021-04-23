@@ -4,7 +4,7 @@ namespace Users.Users.Domain.ValueObject
 {
     public class PokemonName
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
         public PokemonName(string name)
         {

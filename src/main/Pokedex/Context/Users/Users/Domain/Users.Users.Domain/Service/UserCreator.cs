@@ -18,12 +18,11 @@ namespace Users.Users.Domain.Service
             _userRepository.Save(user);
         }
 
+        #region private methods
         private void GuardUserExists(User user)
         {
-            if (_userRepository.Find(user.UserId.Id) != null)
-            {
-                throw new UserExistsException();
-            }
+            if (_userRepository.Exists(user.UserId).Result) throw new UserExistsException(user.UserId);
         }
+        #endregion
     }
 }

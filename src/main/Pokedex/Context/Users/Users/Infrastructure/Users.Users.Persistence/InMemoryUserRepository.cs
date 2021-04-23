@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
-using System.Linq;
+using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Service;
+using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Persistence
 {
@@ -15,20 +16,27 @@ namespace Users.Users.Persistence
             _memoryCache = memoryCache;
         }
 
-        public void Save(User user)
+        public async Task Save(User user)
         {
             var cacheKey = GetCacheKey(user.UserId.Id);
 
-            User userFound = Find(user.UserId.Id);
+            User userFound = await Find(user.UserId);
 
             _memoryCache.Set(cacheKey, userFound ?? user);
         }
 
-        public User Find(string userId)
+        public async Task<User> Find(UserId userId)
         {
-            var cacheKey = GetCacheKey(userId);
+            var cacheKey = GetCacheKey(userId.Id);
 
             return _memoryCache.TryGetValue(cacheKey, out User userFound) ? userFound : null;
+        }
+
+        public async Task<bool> Exists(UserId userId)
+        {
+            var cacheKey = GetCacheKey(userId.Id);
+
+            return _memoryCache.TryGetValue(cacheKey, out User userFound) ? true : false;
         }
 
         #region private methods

@@ -1,5 +1,7 @@
+using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Exceptions;
+using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Service
 {
@@ -12,16 +14,15 @@ namespace Users.Users.Domain.Service
             _userRepository = userRepository;
         }
 
-        public User Execute(string userId)
+        public async Task<User> Execute(UserId userId)
         {
-            var user = _userRepository.Find(userId);
-            GuardUserNotFound(user);
-            return user;
+            GuardUserNotFound(userId);
+            return await _userRepository.Find(userId);
         }
 
-        private void GuardUserNotFound(User user)
+        private void GuardUserNotFound(UserId userId)
         {
-            if (user == null) throw new UserNotFoundException();
+            if (!_userRepository.Exists(userId).Result) throw new UserNotFoundException(userId);
         }
     }
 }

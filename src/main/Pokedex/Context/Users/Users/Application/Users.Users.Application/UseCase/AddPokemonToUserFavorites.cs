@@ -1,4 +1,6 @@
-﻿using Users.Users.Domain.Service;
+﻿using System.Threading.Tasks;
+using Users.Users.Domain.Service;
+using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Application.UseCase
 {
@@ -11,10 +13,10 @@ namespace Users.Users.Application.UseCase
             _userFinder = userFinder;
         }
 
-        public void Execute(string userId, string pokemonName)
+        public async Task Execute(string userId, string pokemonName)
         {
-            var user = _userFinder.Execute(userId);
-            user.AddPokemonFavorite(pokemonName);
+            var user = await _userFinder.Execute(new UserId(userId));
+            user.AddPokemonFavorite(new PokemonName(pokemonName));
         }
     }
 }

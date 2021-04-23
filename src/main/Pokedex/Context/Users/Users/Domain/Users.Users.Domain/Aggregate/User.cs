@@ -13,11 +13,7 @@ namespace Users.Users.Domain.Aggregate
 
         public User(string userId)
         {
-            UserId = new UserId()
-            {
-                Id = userId
-            };
-
+            UserId = new UserId(userId);
             PokemonFavorites = new List<PokemonFavorite>();
         }
 
@@ -27,6 +23,17 @@ namespace Users.Users.Domain.Aggregate
             return new User(userId);
         }
 
+        public void AddPokemonFavorite(PokemonName pokemonName)
+        {
+            GuardPokemonFavoriteExistsInUser(pokemonName);
+
+            PokemonFavorites.Add(new PokemonFavorite()
+            {
+                PokemonName = new PokemonName(pokemonName.Name)
+            });
+        }
+
+        #region private methods
         private static void GuardUserIdValidation(string userId)
         {
             if (string.IsNullOrEmpty(userId))
@@ -35,22 +42,13 @@ namespace Users.Users.Domain.Aggregate
             }
         }
 
-        public void AddPokemonFavorite(string pokemonName)
+        private void GuardPokemonFavoriteExistsInUser(PokemonName pokemonName)
         {
-            GuardPokemonFavoriteExistsInUser(pokemonName);
-
-            PokemonFavorites.Add(new PokemonFavorite()
+            if (PokemonFavorites.Any(pokemonFavorite => pokemonFavorite.PokemonName.Name == pokemonName.Name))
             {
-                PokemonName = new PokemonName(pokemonName)
-            });
-        }
-
-        private void GuardPokemonFavoriteExistsInUser(string pokemonName)
-        {
-            if (PokemonFavorites.Any(pokemonFavorite => pokemonFavorite.PokemonName.Name == pokemonName))
-            {
-                throw new PokemonFavoriteExistsException {PokemonName = pokemonName};
+                throw new PokemonFavoriteExistsException(pokemonName);
             }
         }
+        #endregion
     }
 }

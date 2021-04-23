@@ -51,7 +51,7 @@ namespace Users.Users.Api.Controllers
         {
             try
             {
-                _addPokemonToUserFavorites.Execute(userId, pokemonName);
+                await _addPokemonToUserFavorites.Execute(userId, pokemonName);
                 return Accepted();
             }
             catch (UserNotFoundException ex)
@@ -74,7 +74,7 @@ namespace Users.Users.Api.Controllers
         {
             try
             {
-                return Ok(_getPokemonUserFavorites.Execute(userId));
+                return Ok(await _getPokemonUserFavorites.Execute(userId));
             }
             catch (Exception ex)
             {

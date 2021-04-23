@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Users.Users.Domain.Entities;
 using Users.Users.Domain.Service;
+using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Application.UseCase
 {
@@ -15,9 +17,9 @@ namespace Users.Users.Application.UseCase
             _pokemonFavoriteSearcher = pokemonFavoriteSearcher;
         }
 
-        public List<PokemonFavorite> Execute(string userId)
+        public async Task<List<PokemonFavorite>> Execute(string userId)
         {
-            var user = _userFinder.Execute(userId);
+            var user = await _userFinder.Execute(new UserId(userId));
             return _pokemonFavoriteSearcher.Execute(user);
         }
     }
