@@ -101,8 +101,6 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.CliCons
 
 ## Api Rest 🌐
 
----
-
 ## Pokemons API
 ### Execute the following commands
 ```
