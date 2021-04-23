@@ -64,13 +64,19 @@ Use cases:
     * **Infraestructura Layer**
     * **Application Layer**
     * **Domain Layer**
+      *  **Aggregator**
+      *  **Entities**
+      *  **Domain Services**
       *  **Value Objects**: Objects of our application.
 
-<img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
+  <img src="images/project-structure.png" width="50%" height="50%" alt="Structure"><img src="images/project-structure.png" width="50%" height="50%" alt="Structure">
+
 
 **DDD Layers:**  
-<img src="images/ddd.PNG" width="15%" height="15%" alt="DDD">
 
+<p align="center">
+ <img style="text-align:center" src="images/ddd.PNG" width="25%" height="25%" alt="DDD">
+</p>
 
 # 3. Install 🔧 
 
