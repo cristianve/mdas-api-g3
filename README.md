@@ -64,9 +64,9 @@ Use cases:
     * **Infraestructura Layer**
     * **Application Layer**
     * **Domain Layer**
-      *  **Aggregator**
-      *  **Entities**
-      *  **Domain Services**
+      *  **Aggregator**: Group of domain objects (entities and VOs) that can be treated as a single unit.
+      *  **Entities**: Unique identity Mutable .
+      *  **Domain Services**: Encapsulate application behaviors not belonging to any entity. Input and output of domain objects.
       *  **Value Objects**: Objects of our application.
 
   <img src="images/project-structure.png" width="50%" height="50%" alt="Structure"><img src="images/user-structure.PNG" width="50%" height="50%" alt="Structure">
