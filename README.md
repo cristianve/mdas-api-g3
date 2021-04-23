@@ -29,7 +29,7 @@
 * One class per file
 * Create the classes strictly necessary to avoid duplicating the logic of the use case.
 
-# 2. Challenge 2️⃣ - User Favorite 👤❤️ 
+# 2. Challenge 2️⃣ - Pokemon Favorites 👤❤️ 
 
 ### Requirements:
 
