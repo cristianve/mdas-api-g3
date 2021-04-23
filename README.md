@@ -116,7 +116,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 
 ---
 
-## Users API 👤
+## Users/Pokemon Favoite API 👤
 ### Execute the following commands
 ```
 cd mdas-api-g3
@@ -130,6 +130,21 @@ TODO
 ```https://localhost:{PORT}/swagger/index.html```
 
 ---
+
+---
+
+## Unit Test - Users/Pokemon Favoite API ✅
+### Execute the following commands
+```
+cd mdas-api-g3
+TODO
+```
+### Compile the app
+```dotnet test  src/main/Pokedex-test```
+
+
+---
+
 
 # 4. Results 📷
 
