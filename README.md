@@ -69,7 +69,7 @@ Use cases:
       *  **Domain Services**
       *  **Value Objects**: Objects of our application.
 
-  <img src="images/project-structure.png" width="50%" height="50%" alt="Structure"><img src="images/user-structure.png" width="50%" height="50%" alt="Structure">
+  <img src="images/project-structure.png" width="50%" height="50%" alt="Structure"><img src="images/user-structure.PNG" width="50%" height="50%" alt="Structure">
 
 
 **DDD Layers:**  
