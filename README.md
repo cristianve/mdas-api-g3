@@ -133,7 +133,7 @@ TODO
 
 # 4. Results 📷
 
-## Pokemons Results
+## Pokemons Results - Challenge 1
 ## Charizard example 🔥:
 ## Console 🖥️
 ![Console CLI](images/console-result.PNG)
@@ -143,7 +143,7 @@ TODO
 
 ---
 
-## User Favorite Results
+## User Favorite Results  - Challenge 2
 
 ## Create User example 👤:
 //NEED IMAGE UPLOAD
