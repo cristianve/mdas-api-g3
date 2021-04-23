@@ -165,10 +165,15 @@ cd mdas-api-g3
 
 ## Create User example 👤:
 
+![Create User](images/pruebaUser.PNG)
+
 ## Add favorite example ❤️:
-//NEED IMAGE UPLOAD
+
+![Create User](images/PokemonFavorite.PNG)
+
 ## Get all favorites from user 🔍:
-//NEED IMAGE UPLOAD
+
+![Create User](images/getPokemons.PNG)
 
 ## Swagger User - Api Rest 🌐
 ![Swagger Favorite](images/swagger-user.PNG)
