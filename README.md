@@ -5,10 +5,11 @@
 
 # Content 📇
 
-* 1. Challenge
-* 2. Folder structuring
-* 3. Install 
-* 4. Results
+* 1. Challenge 1 - Pokemons 
+* 2. Challenge 2 - User Favorite 
+* 3. Folder structuring
+* 4. Install 
+* 5. Results
 
 
 # 1. Challenge - Pokemons 1️⃣🤔💭
