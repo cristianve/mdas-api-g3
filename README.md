@@ -141,6 +141,7 @@ TODO
 ## Swagger - Api Rest 🌐
 ![SwaggerAPI](images/swagger.png)
 
+---
 
 ## User Favorite Results
 
