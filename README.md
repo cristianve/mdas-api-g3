@@ -163,6 +163,9 @@ cd mdas-api-g3
 
 ![Swagger Favorite](images/test-result.PNG)
 
+## Swagger User - Api Rest 🌐
+![Swagger Favorite](images/swagger-fav.PNG)
+
 ## Create User example 👤:
 
 ![Create User](images/pruebaUser.PNG)
@@ -175,6 +178,5 @@ cd mdas-api-g3
 
 ![Create User](images/getPokemons.PNG)
 
-## Swagger User - Api Rest 🌐
-![Swagger Favorite](images/swagger-fav.PNG)
+
 
