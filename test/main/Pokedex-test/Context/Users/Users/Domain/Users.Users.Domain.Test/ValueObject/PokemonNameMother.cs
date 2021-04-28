@@ -28,13 +28,5 @@ namespace Users.Users.Domain.Test.ValueObject
         {
             return new PokemonName(_name);
         }
-
-        public static List<PokemonFavorite> PokemonFavorites()
-        {
-            return new List<PokemonFavorite>()
-            {
-                new PokemonFavorite() { PokemonName = new PokemonName("charizard") }
-            };
-        }
     }
 }

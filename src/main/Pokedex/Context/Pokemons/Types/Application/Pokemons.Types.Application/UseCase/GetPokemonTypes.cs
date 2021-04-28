@@ -1,4 +1,4 @@
-﻿using Pokemons.Types.Domain.Service;
+﻿using Pokemons.Types.Domain.Services;
 using System.Threading.Tasks;
 using Pokemons.Types.Domain.ValueObject;
 

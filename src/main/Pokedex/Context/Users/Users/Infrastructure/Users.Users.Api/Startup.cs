@@ -5,7 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Users.Users.Application.UseCase;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Repositories;
+using Users.Users.Domain.Services;
 using Users.Users.Persistence;
 
 namespace Users.Users.Api

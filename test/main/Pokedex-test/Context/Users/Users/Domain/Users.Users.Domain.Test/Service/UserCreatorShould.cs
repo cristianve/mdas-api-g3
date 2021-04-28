@@ -1,7 +1,8 @@
 using System.Threading.Tasks;
 using Moq;
 using Users.Users.Domain.Aggregate;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Repositories;
+using Users.Users.Domain.Services;
 using Users.Users.Domain.Test.Aggregate;
 using Users.Users.Domain.Test.ValueObject;
 using Users.Users.Domain.ValueObject;

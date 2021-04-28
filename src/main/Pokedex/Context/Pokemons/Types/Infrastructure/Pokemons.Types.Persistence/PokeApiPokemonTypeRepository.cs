@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Pokemons.Types.Domain.Aggregate;
 using Pokemons.Types.Domain.Exceptions;
-using Pokemons.Types.Domain.Service;
+using Pokemons.Types.Domain.Repositories;
+using Pokemons.Types.Domain.Services;
 using Pokemons.Types.Domain.ValueObject;
 
 namespace Pokemons.Types.Persistence

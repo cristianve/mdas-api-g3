@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Exceptions;
+using Users.Users.Domain.Repositories;
 
-namespace Users.Users.Domain.Service
+namespace Users.Users.Domain.Services
 {
     public class UserCreator
     {

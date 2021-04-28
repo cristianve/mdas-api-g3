@@ -1,10 +1,9 @@
 using Moq;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Users.Users.Application.UseCase;
-using Users.Users.Domain.Entities;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Repositories;
+using Users.Users.Domain.Services;
 using Users.Users.Domain.Test.Aggregate;
 using Users.Users.Domain.Test.ValueObject;
 using Users.Users.Domain.ValueObject;
@@ -18,15 +17,16 @@ namespace Users.Users.Application.Test.UseCase
         public async Task GetPokemonFavorites_ReturnsPokemonFavorites()
         {
             #region Arrange
-            string userId = UserIdMother.Id();
+            string id = UserIdMother.Id();
+            UserId userId = UserIdMother.UserId();
             string pokemonName = PokemonNameMother.Name();
-            List<PokemonFavorite> pokemonFavorites = PokemonNameMother.PokemonFavorites();
+            PokemonFavorites pokemonFavorites = PokemonFavoritesMother.PokemonFavorites();
 
             var userRepository = new Mock<UserRepository>();
 
             userRepository
                 .Setup(r => r.Find(It.IsAny<UserId>()))
-                .ReturnsAsync(UserMother.UserWithFavorites(userId, pokemonName));
+                .ReturnsAsync(UserMother.UserWithFavorites(id, pokemonName));
 
             userRepository
                 .Setup(r => r.Exists(It.IsAny<UserId>()))
@@ -39,12 +39,12 @@ namespace Users.Users.Application.Test.UseCase
             #endregion
 
             #region Act
-            List<PokemonFavorite> favorites = await getPokemonUserFavorites.Execute(userId);
+            PokemonFavorites favorites = await getPokemonUserFavorites.Execute(id);
 
             #endregion
 
             #region Assert
-            Assert.True(pokemonFavorites.All(f => favorites.Any(item =>
+            Assert.True(pokemonFavorites.Favorites.All(f => favorites.Favorites.Any(item =>
                 item.PokemonName.Name == f.PokemonName.Name)));
 
             #endregion

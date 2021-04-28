@@ -1,18 +1,18 @@
 ﻿using System;
-using Users.Users.Domain.ValueObject;
+using Users.Users.Domain.Entities;
 
 namespace Users.Users.Domain.Exceptions
 {
     public class PokemonFavoriteExistsException : Exception
     {
-        private PokemonName _pokemonName;
+        private PokemonFavorite _pokemonFavorite;
 
         public override string Message
-            => $"The pokemon '{_pokemonName.Name}' already exists in user favorites list";
+            => $"The pokemon '{_pokemonFavorite.PokemonName.Name}' already exists in user favorites list";
 
-        public PokemonFavoriteExistsException(PokemonName pokemonName)
+        public PokemonFavoriteExistsException(PokemonFavorite pokemonName)
         {
-            _pokemonName = pokemonName;
+            _pokemonFavorite = pokemonName;
         }
     }
 }

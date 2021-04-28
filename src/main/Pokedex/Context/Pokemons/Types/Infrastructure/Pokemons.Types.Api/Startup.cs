@@ -5,7 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Pokemons.Types.Application.UseCase;
-using Pokemons.Types.Domain.Service;
+using Pokemons.Types.Domain.Repositories;
+using Pokemons.Types.Domain.Services;
 using Pokemons.Types.Persistence;
 
 namespace Pokemons.Types.Api

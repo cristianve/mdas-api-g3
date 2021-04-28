@@ -1,8 +1,9 @@
 ﻿using Pokemons.Types.Domain.Exceptions;
+using Pokemons.Types.Domain.Repositories;
 using Pokemons.Types.Domain.ValueObject;
 using System.Threading.Tasks;
 
-namespace Pokemons.Types.Domain.Service
+namespace Pokemons.Types.Domain.Services
 {
     public class PokemonTypeSearcher
     {

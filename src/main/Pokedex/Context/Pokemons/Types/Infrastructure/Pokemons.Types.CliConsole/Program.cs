@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Pokemons.Types.Persistence;
 using Pokemons.Types.Domain.ValueObject;
-using Pokemons.Types.Domain.Service;
+using Pokemons.Types.Domain.Services;
 
 namespace Pokemons.Types.CliConsole
 {

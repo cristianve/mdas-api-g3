@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Services;
+using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Application.UseCase
 {
@@ -15,7 +16,7 @@ namespace Users.Users.Application.UseCase
 
         public async Task Execute(string userId)
         {
-            await _userCreator.Execute(User.Create(userId));
+            await _userCreator.Execute(User.Create(new UserId(userId)));
         }
     }
 }

@@ -1,6 +1,7 @@
 using Moq;
 using Pokemons.Types.Domain.Aggregate;
-using Pokemons.Types.Domain.Service;
+using Pokemons.Types.Domain.Repositories;
+using Pokemons.Types.Domain.Services;
 using Pokemons.Types.Domain.Test.ValueObject;
 using Pokemons.Types.Domain.ValueObject;
 using System;
