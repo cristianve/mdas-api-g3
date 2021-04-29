@@ -11,19 +11,19 @@ namespace Pokemons.Pokemons.Api.Controllers
     [Route("pokedex")]
     public class PokemonController : ControllerBase
     {
-        private readonly GetPokemon _getPokemon;
+        private readonly GetPokemonById _getPokemonById;
 
-        public PokemonController(GetPokemon getPokemon)
+        public PokemonController(GetPokemonById getPokemon)
         {
-            _getPokemon = getPokemon;
+            _getPokemonById = getPokemon;
         }
 
-        [HttpGet("{id}/pokemons")]
+        [HttpGet("pokemons/pokemon/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             try
             {
-                return Ok(PokemonToJsonConverter.Execute(await _getPokemon.Execute(id)));
+                return Ok(PokemonToJsonConverter.Execute(await _getPokemonById.Execute(id)));
             }
             catch (PokemonNotFoundException ex)
             {

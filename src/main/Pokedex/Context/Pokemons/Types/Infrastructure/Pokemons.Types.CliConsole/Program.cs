@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using Pokemons.Types.Persistence;
 using Pokemons.Types.Domain.ValueObject;
 using Pokemons.Types.Domain.Services;
-using Shared.Domain.Services;
-using Shared.Infrastructure.Http;
 
 namespace Pokemons.Types.CliConsole
 {
@@ -29,8 +27,7 @@ namespace Pokemons.Types.CliConsole
 
             try
             {
-                Request request = new HttpRequest();
-                PokeApiPokemonTypeRepository pokeApiPokemonTypeRepository = new PokeApiPokemonTypeRepository(request);
+                PokeApiPokemonTypeRepository pokeApiPokemonTypeRepository = new PokeApiPokemonTypeRepository();
                 PokemonTypeSearcher pokemonTypeSearcher = new PokemonTypeSearcher(pokeApiPokemonTypeRepository);
 
                 GetPokemonTypes getPokemonType = new GetPokemonTypes(pokemonTypeSearcher);

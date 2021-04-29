@@ -17,14 +17,13 @@ namespace Pokemons.Pokemons.Domain.Services
 
         public async Task<Pokemon> Execute(PokemonId pokemonId)
         {
-            Pokemon pokemon = await _pokemonRepository.Find(pokemonId);
+            GuardPokemonNotFound(pokemonId);
+            return await _pokemonRepository.Find(pokemonId);
+        }
 
-            if (pokemon == null)
-            {
-                throw new PokemonNotFoundException(pokemonId);
-            }
-
-            return pokemon;
+        private void GuardPokemonNotFound(PokemonId pokemonId)
+        {
+            if (!_pokemonRepository.Exists(pokemonId).Result) throw new PokemonNotFoundException(pokemonId);
         }
     }
 }

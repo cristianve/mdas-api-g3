@@ -23,8 +23,6 @@
     <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Pokemons\Types\Domain\Pokemons.Types.Domain\Pokemons.Types.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Pokemons\Types\Infrastructure\Pokemons.Types.Persistence\Pokemons.Types.Persistence.csproj" />
     <ProjectReference Include="..\..\Domain\Pokemons.Types.Domain.Test\Pokemons.Types.Domain.Test.csproj" />
-    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Shared\Domain\Shared.Domain\Shared.Domain.csproj" />
-    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Shared\Infrastructure\Shared.Infrastructure\Shared.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

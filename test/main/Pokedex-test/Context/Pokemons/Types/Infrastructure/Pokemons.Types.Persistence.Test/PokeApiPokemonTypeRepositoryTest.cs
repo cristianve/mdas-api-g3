@@ -3,8 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Pokemons.Types.Domain.Test.ValueObject;
 using Pokemons.Types.Domain.ValueObject;
-using Shared.Domain.Services;
-using Shared.Infrastructure.Http;
 using Xunit;
 
 namespace Pokemons.Types.Persistence.Test
@@ -16,8 +14,7 @@ namespace Pokemons.Types.Persistence.Test
         {
             #region Arrange
 
-            Request request = new HttpRequest();
-            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository(request);
+            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository();
             PokemonName pokemonName = new PokemonName() { Name = PokemonNameMother.Name() };
 
             #endregion
@@ -39,8 +36,7 @@ namespace Pokemons.Types.Persistence.Test
         {
             #region Arrange
 
-            Request request = new HttpRequest();
-            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository(request);
+            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository();
             PokemonName pokemonName = new PokemonName() { Name = PokemonNameMother.Random() };
 
             #endregion

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Pokemons.Pokemons.Application.UseCase
 {
-    public class GetPokemon
+    public class GetPokemonById
     {
         private PokemonFinder _pokemonFinder;
 
-        public GetPokemon(PokemonFinder pokemonFinder)
+        public GetPokemonById(PokemonFinder pokemonFinder)
         {
             _pokemonFinder = pokemonFinder;
         }
