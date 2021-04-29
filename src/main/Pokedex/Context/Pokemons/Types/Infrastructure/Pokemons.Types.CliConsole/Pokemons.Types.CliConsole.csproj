@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Shared\Infrastructure\Shared.Infrastructure\Shared.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Application\Pokemons.Types.Application\Pokemons.Types.Application.csproj" />
     <ProjectReference Include="..\Pokemons.Types.Persistence\Pokemons.Types.Persistence.csproj" />
   </ItemGroup>

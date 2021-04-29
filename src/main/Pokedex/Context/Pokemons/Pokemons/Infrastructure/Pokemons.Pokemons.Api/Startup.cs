@@ -8,8 +8,6 @@ using Pokemons.Pokemons.Application.UseCase;
 using Pokemons.Pokemons.Domain.Repositories;
 using Pokemons.Pokemons.Domain.Services;
 using Pokemons.Pokemons.Persistence;
-using Shared.Domain.Services;
-using Shared.Infrastructure.Http;
 
 namespace Pokemons.Pokemons.Api
 {
@@ -60,7 +58,7 @@ namespace Pokemons.Pokemons.Api
 
         private void ConfigureUseCases(IServiceCollection services)
         {
-            services.AddScoped<GetPokemon>();
+            services.AddScoped<GetPokemonById>();
         }
 
         private void ConfigureDomainServices(IServiceCollection services)
@@ -71,7 +69,6 @@ namespace Pokemons.Pokemons.Api
         private void ConfigureRepositories(IServiceCollection services)
         {
             services.AddScoped<PokemonRepository, PokeApiPokemonRepository>();
-            services.AddScoped<Request, HttpRequest>();
         }
     }
 }

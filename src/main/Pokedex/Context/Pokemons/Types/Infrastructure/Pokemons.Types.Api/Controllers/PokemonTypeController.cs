@@ -18,7 +18,7 @@ namespace Pokemons.Types.Api.Controllers
             _getPokemonType = getPokemonType;
         }
 
-        [HttpGet("{name}/types")]
+        [HttpGet("pokemons/types/{name}")]
         public async Task<IActionResult> Get(string name)
         {
             try

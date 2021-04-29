@@ -7,5 +7,6 @@ namespace Pokemons.Pokemons.Domain.Repositories
     public interface PokemonRepository
     {
         Task<Pokemon> Find(PokemonId pokemonId);
+        Task<bool> Exists(PokemonId pokemonId);
     }
 }
