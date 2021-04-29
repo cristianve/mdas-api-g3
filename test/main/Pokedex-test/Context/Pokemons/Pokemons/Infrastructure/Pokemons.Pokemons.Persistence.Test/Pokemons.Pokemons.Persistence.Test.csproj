@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\..\src\main\Pokedex\Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Persistence\Pokemons.Pokemons.Persistence.csproj" />
+    <ProjectReference Include="..\..\Domain\Pokemons.Pokemons.Domain.Test\Pokemons.Pokemons.Domain.Test.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,11 +4,11 @@ namespace Users.Users.Domain.Entities
 {
     public class PokemonFavorite
     {
-        public PokemonName PokemonName { get; }
+        public PokemonId PokemonId { get; }
 
-        public PokemonFavorite(PokemonName pokemonName)
+        public PokemonFavorite(PokemonId pokemonId)
         {
-            PokemonName = pokemonName;
+            PokemonId = pokemonId;
         }
     }
 }

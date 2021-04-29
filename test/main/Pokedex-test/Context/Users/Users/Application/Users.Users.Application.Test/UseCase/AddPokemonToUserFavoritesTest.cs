@@ -17,7 +17,7 @@ namespace Users.Users.Application.Test.UseCase
         public async Task AddPokemonToUserFavorites_ReturnsVoid()
         {
             #region Arrange
-            string pokemonName = PokemonNameMother.Name();
+            int pokemonId = PokemonIdMother.Id();
             string userId = UserIdMother.Id();
             var userRepository = new Mock<UserRepository>();
 
@@ -39,7 +39,7 @@ namespace Users.Users.Application.Test.UseCase
             #endregion
 
             #region Act
-            await addPokemonToUserFavorites.Execute(userId, pokemonName);
+            await addPokemonToUserFavorites.Execute(userId, pokemonId);
 
             #endregion
 
@@ -52,7 +52,7 @@ namespace Users.Users.Application.Test.UseCase
         public void AddPokemonToUserFavorites_ReturnsUserNotFoundException()
         {
             #region Arrange
-            string pokemonName = PokemonNameMother.Name();
+            int pokemonId = PokemonIdMother.Id();
             string userId = UserIdMother.Id();
             string expectedMessage = $"User '{userId}' does not exists";
 
@@ -68,7 +68,7 @@ namespace Users.Users.Application.Test.UseCase
             #endregion
 
             #region Act
-            var exception = Record.ExceptionAsync(async () => await addPokemonToUserFavorites.Execute(userId, pokemonName));
+            var exception = Record.ExceptionAsync(async () => await addPokemonToUserFavorites.Execute(userId, pokemonId));
 
             #endregion
 
@@ -82,15 +82,15 @@ namespace Users.Users.Application.Test.UseCase
         public void AddPokemonToUserFavorites_ReturnsPokemonAlreadyExistsException()
         {
             #region Arrange
-            string pokemonName = PokemonNameMother.Name();
+            int pokemonId = PokemonIdMother.Id();
             string userId = UserIdMother.Id();
-            string expectedMessage = $"The pokemon '{pokemonName}' already exists in user favorites list";
+            string expectedMessage = $"The pokemon with Id '{pokemonId}' already exists in user favorites list";
 
             var userRepository = new Mock<UserRepository>();
 
             userRepository
                 .Setup(r => r.Find(It.IsAny<UserId>()))
-                .ReturnsAsync(UserMother.UserWithFavorites(userId, pokemonName));
+                .ReturnsAsync(UserMother.UserWithFavorites(userId, pokemonId));
 
             userRepository
                 .Setup(r => r.Exists(It.IsAny<UserId>()))
@@ -106,7 +106,7 @@ namespace Users.Users.Application.Test.UseCase
             #endregion
 
             #region Act
-            var exception = Record.ExceptionAsync(async () => await addPokemonToUserFavorites.Execute(userId, pokemonName));
+            var exception = Record.ExceptionAsync(async () => await addPokemonToUserFavorites.Execute(userId, pokemonId));
 
             #endregion
 

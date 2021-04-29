@@ -2,18 +2,18 @@ using Users.Users.Domain.Exceptions;
 
 namespace Users.Users.Domain.ValueObject
 {
-    public class PokemonName
+    public class PokemonId
     {
-        public string Name { get; }
+        public int Id { get; }
 
-        public PokemonName(string name)
+        public PokemonId(int id)
         {
-            if (string.IsNullOrEmpty(name))
+            if (id == 0)
             {
                 throw new PokemonFavoriteIsEmptyException();
             }
 
-            Name = name;
+            Id = id;
         }
     }
 }

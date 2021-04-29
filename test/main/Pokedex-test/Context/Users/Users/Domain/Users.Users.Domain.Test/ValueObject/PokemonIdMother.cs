@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using Users.Users.Domain.Entities;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Test.ValueObject
 {
-    public class PokemonNameMother
+    public class PokemonIdMother
     {
-        private static string _name = "charizard";
+        private static int _id = 6;
         private static Random random = new Random();
         private const int NUM_OF_CHARS = 8;
 
@@ -19,14 +17,14 @@ namespace Users.Users.Domain.Test.ValueObject
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public static string Name()
+        public static int Id()
         {
-            return _name;
+            return _id;
         }
 
-        public static PokemonName PokemonName()
+        public static PokemonId PokemonId()
         {
-            return new PokemonName(_name);
+            return new PokemonId(_id);
         }
     }
 }

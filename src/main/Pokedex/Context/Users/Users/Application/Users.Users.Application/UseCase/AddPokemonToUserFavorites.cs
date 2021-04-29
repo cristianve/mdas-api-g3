@@ -17,10 +17,10 @@ namespace Users.Users.Application.UseCase
             _pokemonFavoriteCreator = pokemonFavoriteCreator;
         }
 
-        public async Task Execute(string userId, string pokemonName)
+        public async Task Execute(string userId, int pokemonId)
         {
             User user = await _userFinder.Execute(new UserId(userId));
-            await _pokemonFavoriteCreator.Execute(user, new PokemonFavorite(new PokemonName(pokemonName)));
+            await _pokemonFavoriteCreator.Execute(user, new PokemonFavorite(new PokemonId(pokemonId)));
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Users.Users.Domain.ValueObject
         #region private methods
         private void GuardPokemonFavoriteExistsInUser(PokemonFavorite favorite)
         {
-            if (Favorites.Any(pokemonFavorite => pokemonFavorite.PokemonName.Name == favorite.PokemonName.Name))
+            if (Favorites.Any(pokemonFavorite => pokemonFavorite.PokemonId.Id == favorite.PokemonId.Id))
             {
                 throw new PokemonFavoriteExistsException(favorite);
             }

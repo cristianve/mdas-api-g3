@@ -8,7 +8,7 @@ namespace Users.Users.Domain.Exceptions
         private PokemonFavorite _pokemonFavorite;
 
         public override string Message
-            => $"The pokemon '{_pokemonFavorite.PokemonName.Name}' already exists in user favorites list";
+            => $"The pokemon with Id '{_pokemonFavorite.PokemonId.Id}' already exists in user favorites list";
 
         public PokemonFavoriteExistsException(PokemonFavorite pokemonName)
         {

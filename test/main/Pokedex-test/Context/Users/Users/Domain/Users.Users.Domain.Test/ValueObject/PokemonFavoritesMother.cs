@@ -8,7 +8,7 @@ namespace Users.Users.Domain.Test.ValueObject
         public static PokemonFavorites PokemonFavorites()
         {
             PokemonFavorites pokemonFavorites = new PokemonFavorites();
-            pokemonFavorites.AddFavorite(new PokemonFavorite(new PokemonName("charizard")));
+            pokemonFavorites.AddFavorite(new PokemonFavorite(new PokemonId(6)));
             return pokemonFavorites;
         }
     }

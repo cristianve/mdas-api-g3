@@ -18,12 +18,12 @@ namespace Pokemons.Pokemons.Api.Controllers
             _getPokemonById = getPokemon;
         }
 
-        [HttpGet("pokemons/pokemon/{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("pokemons/pokemon/{pokemonId}")]
+        public async Task<IActionResult> Get(int pokemonId)
         {
             try
             {
-                return Ok(PokemonToJsonConverter.Execute(await _getPokemonById.Execute(id)));
+                return Ok(PokemonToJsonConverter.Execute(await _getPokemonById.Execute(pokemonId)));
             }
             catch (PokemonNotFoundException ex)
             {

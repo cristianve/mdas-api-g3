@@ -21,14 +21,14 @@ namespace Users.Users.Api.Controllers
             _getPokemonUserFavorites = getPokemonUserFavorites;
         }
 
-        [HttpPut("user/addFavorite/{pokemonName}")]
+        [HttpPut("user/addFavorite/{pokemonId}")]
         public async Task<IActionResult> Put([Required] [FromHeader(Name = "userId")]
-            string userId, string pokemonName)
+            string userId, int pokemonId)
         {
             try
             {
-                await _addPokemonToUserFavorites.Execute(userId, pokemonName);
-                return Created($"user/addFavorite/{pokemonName}", pokemonName);
+                await _addPokemonToUserFavorites.Execute(userId, pokemonId);
+                return Created($"user/addFavorite/{pokemonId}", pokemonId);
             }
             catch (UserNotFoundException ex)
             {
