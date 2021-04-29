@@ -4,14 +4,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Pokemons.Types.Application.UseCase;
-using Pokemons.Types.Domain.Repositories;
-using Pokemons.Types.Domain.Services;
-using Pokemons.Types.Persistence;
+using Pokemons.Pokemons.Application.UseCase;
+using Pokemons.Pokemons.Domain.Repositories;
+using Pokemons.Pokemons.Domain.Services;
+using Pokemons.Pokemons.Persistence;
 using Shared.Domain.Services;
 using Shared.Infrastructure.Http;
 
-namespace Pokemons.Types.Api
+namespace Pokemons.Details.Api
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace Pokemons.Types.Api
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pokemon.Type.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pokemons.Details.Api", Version = "v1" });
             });
         }
 
@@ -43,7 +43,7 @@ namespace Pokemons.Types.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pokemon.Type.Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pokemons.Details.Api v1"));
             }
 
             app.UseHttpsRedirection();
@@ -60,17 +60,17 @@ namespace Pokemons.Types.Api
 
         private void ConfigureUseCases(IServiceCollection services)
         {
-            services.AddScoped<GetPokemonTypes>();
+            services.AddScoped<GetPokemon>();
         }
 
         private void ConfigureDomainServices(IServiceCollection services)
         {
-            services.AddScoped<PokemonTypeSearcher>();
+            services.AddScoped<PokemonFinder>();
         }
 
         private void ConfigureRepositories(IServiceCollection services)
         {
-            services.AddScoped<PokemonTypeRepository, PokeApiPokemonTypeRepository>();
+            services.AddScoped<PokemonRepository, PokeApiPokemonRepository>();
             services.AddScoped<Request, HttpRequest>();
         }
     }

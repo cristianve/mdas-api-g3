@@ -20,7 +20,7 @@ namespace Pokemons.Types.Domain.Services
 
             if (pokemonTypes == null)
             {
-                throw new PokemonNotFoundException() { PokemonName = pokemonName.Name };
+                throw new PokemonNotFoundException(pokemonName);
             }
 
             return pokemonTypes;

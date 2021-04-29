@@ -3,6 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Pokemons.Types.Domain.Test.ValueObject;
 using Pokemons.Types.Domain.ValueObject;
+using Shared.Domain.Services;
+using Shared.Infrastructure.Http;
 using Xunit;
 
 namespace Pokemons.Types.Persistence.Test
@@ -13,7 +15,9 @@ namespace Pokemons.Types.Persistence.Test
         public async Task Search_Found_ReturnsTypes()
         {
             #region Arrange
-            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository();
+
+            Request request = new HttpRequest();
+            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository(request);
             PokemonName pokemonName = new PokemonName() { Name = PokemonNameMother.Name() };
 
             #endregion
@@ -34,7 +38,9 @@ namespace Pokemons.Types.Persistence.Test
         public async Task Search_NotFound_ReturnsNull()
         {
             #region Arrange
-            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository();
+
+            Request request = new HttpRequest();
+            PokeApiPokemonTypeRepository pokemonTypeRepository = new PokeApiPokemonTypeRepository(request);
             PokemonName pokemonName = new PokemonName() { Name = PokemonNameMother.Random() };
 
             #endregion

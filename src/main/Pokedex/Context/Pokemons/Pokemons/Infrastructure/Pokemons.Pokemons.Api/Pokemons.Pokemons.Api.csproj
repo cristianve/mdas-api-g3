@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -10,9 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\Domain\Shared.Domain\Shared.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\Shared\Infrastructure\Shared.Infrastructure\Shared.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\Application\Pokemons.Types.Application\Pokemons.Types.Application.csproj" />
-    <ProjectReference Include="..\Pokemons.Types.Persistence\Pokemons.Types.Persistence.csproj" />
+    <ProjectReference Include="..\..\Application\Pokemons.Pokemons.Application\Pokemons.Pokemons.Application.csproj" />
+    <ProjectReference Include="..\Pokemons.Pokemons.Persistence\Pokemons.Pokemons.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
