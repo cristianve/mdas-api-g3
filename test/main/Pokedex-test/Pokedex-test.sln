@@ -27,15 +27,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Application.Test", "Context\Pokemons\Types\Application\Pokemons.Types.Application.Test\Pokemons.Types.Application.Test.csproj", "{3091436D-0ADE-4C95-A42E-6F235A1A741C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemons.Types.Domain.Test", "Context\Pokemons\Types\Domain\Pokemons.Types.Domain.Test\Pokemons.Types.Domain.Test.csproj", "{0B2AFCA8-BDBB-412E-A123-9730A1EFC4D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Domain.Test", "Context\Pokemons\Types\Domain\Pokemons.Types.Domain.Test\Pokemons.Types.Domain.Test.csproj", "{0B2AFCA8-BDBB-412E-A123-9730A1EFC4D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Users.Application.Test", "Context\Users\Users\Application\Users.Users.Application.Test\Users.Users.Application.Test.csproj", "{BBD6CF4E-A441-4326-8F01-991BE0D66488}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Users.Users.Application.Test", "Context\Users\Users\Application\Users.Users.Application.Test\Users.Users.Application.Test.csproj", "{BBD6CF4E-A441-4326-8F01-991BE0D66488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Users.Domain.Test", "Context\Users\Users\Domain\Users.Users.Domain.Test\Users.Users.Domain.Test.csproj", "{6741AAEE-FD10-4E80-9F2B-B82AE20EB1CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Users.Users.Domain.Test", "Context\Users\Users\Domain\Users.Users.Domain.Test\Users.Users.Domain.Test.csproj", "{6741AAEE-FD10-4E80-9F2B-B82AE20EB1CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Types.Persistence.Test", "Context\Pokemons\Types\Infrastructure\Pokemons.Types.Persistence.Test\Pokemons.Types.Persistence.Test.csproj", "{C5CA1131-8CFA-4AAA-9EA4-3558E74ADBD2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Users.Users.Persistence.Test", "Context\Users\Users\Infrastructure\Users.Users.Persistence.Test\Users.Users.Persistence.Test.csproj", "{26244117-A1EB-48BE-A672-1B1F0B5B76E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pokemons", "Pokemons", "{71C71588-C30B-41F5-8318-162AFF8EA27A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{4DA4E134-BE37-4565-B896-66E625FC54AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{4A2F42E3-EDA7-45A8-9815-8DEAEEBBF8E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BEF6B81A-C0BA-40E3-9652-71753494486D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Application.Test", "Context\Pokemons\Pokemons\Application\Pokemons.Pokemons.Application.Test\Pokemons.Pokemons.Application.Test.csproj", "{1607CE5B-4154-4150-B36E-C491CA0A7B7C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Domain.Test", "Context\Pokemons\Pokemons\Domain\Pokemons.Pokemons.Domain.Test\Pokemons.Pokemons.Domain.Test.csproj", "{37A19396-2222-4158-BB2B-603356707639}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Persistence.Test", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Persistence.Test\Pokemons.Pokemons.Persistence.Test.csproj", "{3BD355EF-ADA7-4021-BC44-91C530379533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemons.Pokemons.Api.Test", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Api.Test\Pokemons.Pokemons.Api.Test.csproj", "{B9D72957-DA53-460E-8DB0-3147FBBE6531}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +83,22 @@ Global
 		{26244117-A1EB-48BE-A672-1B1F0B5B76E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26244117-A1EB-48BE-A672-1B1F0B5B76E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26244117-A1EB-48BE-A672-1B1F0B5B76E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1607CE5B-4154-4150-B36E-C491CA0A7B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1607CE5B-4154-4150-B36E-C491CA0A7B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1607CE5B-4154-4150-B36E-C491CA0A7B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1607CE5B-4154-4150-B36E-C491CA0A7B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A19396-2222-4158-BB2B-603356707639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A19396-2222-4158-BB2B-603356707639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A19396-2222-4158-BB2B-603356707639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A19396-2222-4158-BB2B-603356707639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD355EF-ADA7-4021-BC44-91C530379533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD355EF-ADA7-4021-BC44-91C530379533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD355EF-ADA7-4021-BC44-91C530379533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD355EF-ADA7-4021-BC44-91C530379533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +120,14 @@ Global
 		{6741AAEE-FD10-4E80-9F2B-B82AE20EB1CD} = {1D793D8B-C13C-42F6-8D73-B85499EBB187}
 		{C5CA1131-8CFA-4AAA-9EA4-3558E74ADBD2} = {5C3579C4-0231-4DBD-9FAB-DD75F4F48827}
 		{26244117-A1EB-48BE-A672-1B1F0B5B76E2} = {FB7D9105-66BE-4DD1-8143-78C03262AD72}
+		{71C71588-C30B-41F5-8318-162AFF8EA27A} = {E433CF99-C339-462E-A94C-CA04999FCC2A}
+		{4DA4E134-BE37-4565-B896-66E625FC54AD} = {71C71588-C30B-41F5-8318-162AFF8EA27A}
+		{4A2F42E3-EDA7-45A8-9815-8DEAEEBBF8E5} = {71C71588-C30B-41F5-8318-162AFF8EA27A}
+		{BEF6B81A-C0BA-40E3-9652-71753494486D} = {71C71588-C30B-41F5-8318-162AFF8EA27A}
+		{1607CE5B-4154-4150-B36E-C491CA0A7B7C} = {4DA4E134-BE37-4565-B896-66E625FC54AD}
+		{37A19396-2222-4158-BB2B-603356707639} = {4A2F42E3-EDA7-45A8-9815-8DEAEEBBF8E5}
+		{3BD355EF-ADA7-4021-BC44-91C530379533} = {BEF6B81A-C0BA-40E3-9652-71753494486D}
+		{B9D72957-DA53-460E-8DB0-3147FBBE6531} = {BEF6B81A-C0BA-40E3-9652-71753494486D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3DBD59B-2D8A-4611-8CA1-6551FC13D78C}

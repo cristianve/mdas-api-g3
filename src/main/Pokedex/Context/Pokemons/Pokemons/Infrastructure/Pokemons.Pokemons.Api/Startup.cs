@@ -11,7 +11,7 @@ using Pokemons.Pokemons.Persistence;
 using Shared.Domain.Services;
 using Shared.Infrastructure.Http;
 
-namespace Pokemons.Details.Api
+namespace Pokemons.Pokemons.Api
 {
     public class Startup
     {

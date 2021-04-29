@@ -5,7 +5,7 @@ using Pokemons.Pokemons.Api.Converter;
 using Pokemons.Pokemons.Application.UseCase;
 using Pokemons.Pokemons.Domain.Exceptions;
 
-namespace Pokemons.Details.Api.Controllers
+namespace Pokemons.Pokemons.Api.Controllers
 {
     [ApiController]
     [Route("pokedex")]

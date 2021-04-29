@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Pokemons.Details.Api
+namespace Pokemons.Pokemons.Api
 {
     public class Program
     {
