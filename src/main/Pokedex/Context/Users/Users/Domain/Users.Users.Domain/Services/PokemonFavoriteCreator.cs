@@ -1,8 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
+using Users.Users.Domain.Entities;
+using Users.Users.Domain.Repositories;
 using Users.Users.Domain.ValueObject;
 
-namespace Users.Users.Domain.Service
+namespace Users.Users.Domain.Services
 {
     public class PokemonFavoriteCreator
     {
@@ -13,9 +15,9 @@ namespace Users.Users.Domain.Service
             _userRepository = userRepository;
         }
 
-        public async Task Execute (User user, PokemonName pokemonName)
+        public async Task Execute(User user, PokemonFavorite pokemonFavorite)
         {
-            user.AddPokemonFavorite(pokemonName);
+            user.AddPokemonFavorite(pokemonFavorite);
             await _userRepository.SaveFavorites(user);
         }
     }

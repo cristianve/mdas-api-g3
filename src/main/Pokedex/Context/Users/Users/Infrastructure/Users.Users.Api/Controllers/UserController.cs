@@ -23,7 +23,7 @@ namespace Users.Users.Api.Controllers
             try
             {
                 await _createUser.Execute(userId);
-                return Accepted();
+                return Created($"user/create/{userId}", userId);
             }
             catch (InvalidUserException ex)
             {

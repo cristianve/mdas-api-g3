@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Repositories;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Persistence

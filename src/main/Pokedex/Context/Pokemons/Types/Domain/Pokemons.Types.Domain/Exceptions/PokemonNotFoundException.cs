@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Pokemons.Types.Domain.ValueObject;
+using System;
 
 namespace Pokemons.Types.Domain.Exceptions
 {
     public class PokemonNotFoundException : Exception
     {
-        public string PokemonName { get; set; }
+        private PokemonName _pokemonName;
+
+        public PokemonNotFoundException(PokemonName pokemonName)
+        {
+            _pokemonName = pokemonName;
+        }
 
         public override string Message
-            => $"Pokemon '{PokemonName}' does not exist";
+            => $"Pokemon '{_pokemonName.Name}' does not exist";
     }
 }

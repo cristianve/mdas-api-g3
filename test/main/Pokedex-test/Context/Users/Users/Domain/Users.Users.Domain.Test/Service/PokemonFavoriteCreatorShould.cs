@@ -2,8 +2,10 @@ using System;
 using System.Threading.Tasks;
 using Moq;
 using Users.Users.Domain.Aggregate;
+using Users.Users.Domain.Entities;
 using Users.Users.Domain.Exceptions;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Repositories;
+using Users.Users.Domain.Services;
 using Users.Users.Domain.Test.Aggregate;
 using Users.Users.Domain.Test.ValueObject;
 using Users.Users.Domain.ValueObject;
@@ -19,8 +21,9 @@ namespace Users.Users.Domain.Test.Service
             #region Given
 
             PokemonName pokemonName = PokemonNameMother.PokemonName();
+            PokemonFavorite pokemonFavorite = new PokemonFavorite(pokemonName);
             string userId = UserIdMother.Id();
-            User user = new User(userId);
+            User user = new User(new UserId(userId));
             var userRepository = new Mock<UserRepository>();
 
             userRepository
@@ -32,7 +35,7 @@ namespace Users.Users.Domain.Test.Service
 
             #region When
 
-            await pokemonFavoriteCreator.Execute(user, pokemonName);
+            await pokemonFavoriteCreator.Execute(user, pokemonFavorite);
 
             #endregion
 
@@ -49,6 +52,7 @@ namespace Users.Users.Domain.Test.Service
             #region Given
 
             PokemonName pokemonName = PokemonNameMother.PokemonName();
+            PokemonFavorite pokemonFavorite = new PokemonFavorite(pokemonName);
             string userId = UserIdMother.Id();
             string expectedMessage = $"The pokemon '{pokemonName.Name}' already exists in user favorites list";
             User user = UserMother.UserWithFavorites(userId, pokemonName.Name);
@@ -67,7 +71,7 @@ namespace Users.Users.Domain.Test.Service
             #endregion
 
             #region When
-            var exception = Record.ExceptionAsync(async () => await pokemonFavoriteCreator.Execute(user, pokemonName));
+            var exception = Record.ExceptionAsync(async () => await pokemonFavoriteCreator.Execute(user, pokemonFavorite));
 
             #endregion
 

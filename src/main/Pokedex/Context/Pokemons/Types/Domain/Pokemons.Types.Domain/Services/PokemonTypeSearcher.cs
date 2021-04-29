@@ -1,8 +1,9 @@
 ﻿using Pokemons.Types.Domain.Exceptions;
+using Pokemons.Types.Domain.Repositories;
 using Pokemons.Types.Domain.ValueObject;
 using System.Threading.Tasks;
 
-namespace Pokemons.Types.Domain.Service
+namespace Pokemons.Types.Domain.Services
 {
     public class PokemonTypeSearcher
     {
@@ -19,7 +20,7 @@ namespace Pokemons.Types.Domain.Service
 
             if (pokemonTypes == null)
             {
-                throw new PokemonNotFoundException() { PokemonName = pokemonName.Name };
+                throw new PokemonNotFoundException(pokemonName);
             }
 
             return pokemonTypes;

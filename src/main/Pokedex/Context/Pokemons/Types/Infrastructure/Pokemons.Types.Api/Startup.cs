@@ -5,8 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Pokemons.Types.Application.UseCase;
-using Pokemons.Types.Domain.Service;
+using Pokemons.Types.Domain.Repositories;
+using Pokemons.Types.Domain.Services;
 using Pokemons.Types.Persistence;
+using Shared.Domain.Services;
+using Shared.Infrastructure.Http;
 
 namespace Pokemons.Types.Api
 {
@@ -68,6 +71,7 @@ namespace Pokemons.Types.Api
         private void ConfigureRepositories(IServiceCollection services)
         {
             services.AddScoped<PokemonTypeRepository, PokeApiPokemonTypeRepository>();
+            services.AddScoped<Request, HttpRequest>();
         }
     }
 }

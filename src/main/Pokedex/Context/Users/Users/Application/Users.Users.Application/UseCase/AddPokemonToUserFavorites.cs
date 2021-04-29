@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
-using Users.Users.Domain.Service;
+using Users.Users.Domain.Entities;
+using Users.Users.Domain.Services;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Application.UseCase
@@ -19,7 +20,7 @@ namespace Users.Users.Application.UseCase
         public async Task Execute(string userId, string pokemonName)
         {
             User user = await _userFinder.Execute(new UserId(userId));
-            await _pokemonFavoriteCreator.Execute(user, new PokemonName(pokemonName));
+            await _pokemonFavoriteCreator.Execute(user, new PokemonFavorite(new PokemonName(pokemonName)));
         }
     }
 }

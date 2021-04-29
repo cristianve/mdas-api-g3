@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Users.Users.Domain.Entities;
-using Users.Users.Domain.Exceptions;
+﻿using Users.Users.Domain.Entities;
 using Users.Users.Domain.ValueObject;
 
 namespace Users.Users.Domain.Aggregate
@@ -9,38 +6,22 @@ namespace Users.Users.Domain.Aggregate
     public class User
     {
         public UserId UserId { get; }
-        public List<PokemonFavorite> PokemonFavorites { get; }
+        public PokemonFavorites PokemonFavorites { get; }
 
-        public User(string userId)
+        public User(UserId userId)
         {
-            UserId = new UserId(userId);
-            PokemonFavorites = new List<PokemonFavorite>();
+            UserId = userId;
+            PokemonFavorites = new PokemonFavorites();
         }
 
-        public static User Create(string userId)
+        public static User Create(UserId userId)
         {
             return new User(userId);
         }
 
-        public void AddPokemonFavorite(PokemonName pokemonName)
+        public void AddPokemonFavorite(PokemonFavorite favorite)
         {
-            GuardPokemonFavoriteExistsInUser(pokemonName);
-
-            PokemonFavorites.Add(new PokemonFavorite()
-            {
-                PokemonName = new PokemonName(pokemonName.Name)
-            });
+            PokemonFavorites.AddFavorite(favorite);
         }
-
-        #region private methods
-        private void GuardPokemonFavoriteExistsInUser(PokemonName pokemonName)
-        {
-            if (PokemonFavorites.Any(pokemonFavorite => pokemonFavorite.PokemonName.Name == pokemonName.Name))
-            {
-                throw new PokemonFavoriteExistsException(pokemonName);
-            }
-        }
-
-        #endregion
     }
 }

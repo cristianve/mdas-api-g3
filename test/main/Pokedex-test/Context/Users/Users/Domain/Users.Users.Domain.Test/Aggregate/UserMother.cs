@@ -19,13 +19,13 @@ namespace Users.Users.Domain.Test.Aggregate
 
         public static User User(string userId)
         {
-            return new User(userId);
+            return new User(new UserId(userId));
         }
 
         public static User UserWithFavorites(string userId, string pokemonName)
         {
-            User user = new User(userId);
-            user.AddPokemonFavorite(new PokemonName(pokemonName));
+            User user = new User(new UserId(userId));
+            user.AddPokemonFavorite(new PokemonFavorite(new PokemonName(pokemonName)));
             return user;
         }
     }

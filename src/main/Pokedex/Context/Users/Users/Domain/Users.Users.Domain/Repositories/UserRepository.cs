@@ -2,7 +2,7 @@
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.ValueObject;
 
-namespace Users.Users.Domain.Service
+namespace Users.Users.Domain.Repositories
 {
     public interface UserRepository
     {
