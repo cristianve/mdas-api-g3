@@ -22,10 +22,10 @@ namespace Users.Users.Domain.Test.Aggregate
             return new User(new UserId(userId));
         }
 
-        public static User UserWithFavorites(string userId, string pokemonName)
+        public static User UserWithFavorites(string userId, int pokemonId)
         {
             User user = new User(new UserId(userId));
-            user.AddPokemonFavorite(new PokemonFavorite(new PokemonName(pokemonName)));
+            user.AddPokemonFavorite(new PokemonFavorite(new PokemonId(pokemonId)));
             return user;
         }
     }

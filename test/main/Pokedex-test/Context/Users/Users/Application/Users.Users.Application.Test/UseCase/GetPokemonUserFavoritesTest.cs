@@ -19,14 +19,14 @@ namespace Users.Users.Application.Test.UseCase
             #region Arrange
             string id = UserIdMother.Id();
             UserId userId = UserIdMother.UserId();
-            string pokemonName = PokemonNameMother.Name();
+            int pokemonId = PokemonIdMother.Id();
             PokemonFavorites pokemonFavorites = PokemonFavoritesMother.PokemonFavorites();
 
             var userRepository = new Mock<UserRepository>();
 
             userRepository
                 .Setup(r => r.Find(It.IsAny<UserId>()))
-                .ReturnsAsync(UserMother.UserWithFavorites(id, pokemonName));
+                .ReturnsAsync(UserMother.UserWithFavorites(id, pokemonId));
 
             userRepository
                 .Setup(r => r.Exists(It.IsAny<UserId>()))
@@ -45,7 +45,7 @@ namespace Users.Users.Application.Test.UseCase
 
             #region Assert
             Assert.True(pokemonFavorites.Favorites.All(f => favorites.Favorites.Any(item =>
-                item.PokemonName.Name == f.PokemonName.Name)));
+                item.PokemonId.Id == f.PokemonId.Id)));
 
             #endregion
         }

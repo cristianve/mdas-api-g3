@@ -13,14 +13,14 @@ using TechTalk.SpecFlow;
 namespace Pokemons.Pokemons.Api.Test.Steps
 {
     [Binding, Scope(Feature = "Pokemons")]
-    public class PokemonsSteps
+    public class PokemonsStepDefinitions
     {
         private readonly WebApiDriver _driver;
 
         private int _id;
         private HttpResponseMessage _response;
 
-        public PokemonsSteps(WebApiDriver driver)
+        public PokemonsStepDefinitions(WebApiDriver driver)
         {
             _driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }

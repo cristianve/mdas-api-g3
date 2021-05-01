@@ -16,10 +16,10 @@ namespace Pokemons.Pokemons.Api.Test.Drivers
                 });
         }
 
-        public async Task<HttpResponseMessage> GetPokemons(int id)
+        public async Task<HttpResponseMessage> GetPokemons(int pokemonId)
         {
             var client = factory.CreateClient();
-            var path = $"/pokedex/pokemons/pokemon/{id}";
+            var path = $"/pokedex/pokemons/pokemon/{pokemonId}";
             
             return await client.GetAsync(path);
         }

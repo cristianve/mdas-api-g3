@@ -7,7 +7,7 @@ using Users.Users.Domain.Exceptions;
 namespace Users.Users.Api.Controllers
 {
     [ApiController]
-    [Route("user")]
+    [Route("users")]
     public class UserController : ControllerBase
     {
         private readonly CreateUser _createUser;
