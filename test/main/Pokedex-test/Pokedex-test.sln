@@ -51,7 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Domain.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Persistence.Test", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Persistence.Test\Pokemons.Pokemons.Persistence.Test.csproj", "{3BD355EF-ADA7-4021-BC44-91C530379533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemons.Pokemons.Api.Test", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Api.Test\Pokemons.Pokemons.Api.Test.csproj", "{B9D72957-DA53-460E-8DB0-3147FBBE6531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Api.Test", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Api.Test\Pokemons.Pokemons.Api.Test.csproj", "{B9D72957-DA53-460E-8DB0-3147FBBE6531}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemons.Types.Api.Test", "Context\Pokemons\Types\Infrastructure\Pokemons.Types.Api.Test\Pokemons.Types.Api.Test.csproj", "{207C8D9C-9495-4544-A119-21F5F5B39495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Users.Api.Test", "Context\Users\Users\Infrastructure\Users.Users.Api.Test\Users.Users.Api.Test.csproj", "{E720843B-C9F1-43CA-BA51-89F020017686}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +103,14 @@ Global
 		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9D72957-DA53-460E-8DB0-3147FBBE6531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207C8D9C-9495-4544-A119-21F5F5B39495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207C8D9C-9495-4544-A119-21F5F5B39495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207C8D9C-9495-4544-A119-21F5F5B39495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207C8D9C-9495-4544-A119-21F5F5B39495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E720843B-C9F1-43CA-BA51-89F020017686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E720843B-C9F1-43CA-BA51-89F020017686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E720843B-C9F1-43CA-BA51-89F020017686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E720843B-C9F1-43CA-BA51-89F020017686}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +140,8 @@ Global
 		{37A19396-2222-4158-BB2B-603356707639} = {4A2F42E3-EDA7-45A8-9815-8DEAEEBBF8E5}
 		{3BD355EF-ADA7-4021-BC44-91C530379533} = {BEF6B81A-C0BA-40E3-9652-71753494486D}
 		{B9D72957-DA53-460E-8DB0-3147FBBE6531} = {BEF6B81A-C0BA-40E3-9652-71753494486D}
+		{207C8D9C-9495-4544-A119-21F5F5B39495} = {5C3579C4-0231-4DBD-9FAB-DD75F4F48827}
+		{E720843B-C9F1-43CA-BA51-89F020017686} = {FB7D9105-66BE-4DD1-8143-78C03262AD72}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3DBD59B-2D8A-4611-8CA1-6551FC13D78C}

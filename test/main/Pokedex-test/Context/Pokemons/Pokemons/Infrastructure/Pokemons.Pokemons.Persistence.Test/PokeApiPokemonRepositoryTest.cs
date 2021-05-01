@@ -12,7 +12,7 @@ namespace Pokemons.Pokemons.Persistence.Test
     public class PokeApiPokemonRepositoryTest
     {
         [Fact]
-        public async Task Search_Found_ReturnsTypes()
+        public async Task Search_Found_ReturnsPokemonDetail()
         {
             #region Arrange
 
@@ -32,6 +32,27 @@ namespace Pokemons.Pokemons.Persistence.Test
             Assert.Equal(pokemon.PokemonId.Id, PokemonMother.Pokemon().PokemonId.Id);
             Assert.Equal(pokemon.PokemonName.Name, PokemonMother.Pokemon().PokemonName.Name);
             Assert.Equal(typesArray, PokemonMother.Pokemon().PokemonTypes.Types.Select(s => s.Type).ToArray(), StringComparer.InvariantCultureIgnoreCase);
+
+            #endregion
+        }
+
+        [Fact]
+        public async Task ExistsUser_ReturnsBool()
+        {
+            #region Arrange
+
+            PokeApiPokemonRepository pokemonRepository = new PokeApiPokemonRepository();
+            PokemonId pokemonId = new PokemonId(PokemonIdMother.Id());
+
+            #endregion
+
+            #region Act
+            bool exists = await pokemonRepository.Exists(pokemonId);
+
+            #endregion
+
+            #region Assert
+            Assert.True(exists);
 
             #endregion
         }

@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Newtonsoft.Json.Linq;
-using Pokemons.Pokemons.Api.Test.Converter;
-using Pokemons.Pokemons.Api.Test.Drivers;
+using Pokemons.Types.Api.Test.Converter;
+using Pokemons.Types.Api.Test.Drivers;
 using System;
 using System.IO;
 using System.Linq;
@@ -10,44 +10,42 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
-namespace Pokemons.Pokemons.Api.Test.Steps
+namespace Pokemons.Types.Api.Test.Steps
 {
-    [Binding, Scope(Feature = "Pokemons")]
-    public class PokemonsStepDefinitions
+    [Binding, Scope(Feature = "Pokemon Types")]
+    public class PokemonTypesStepDefinitions
     {
         private readonly WebApiDriver _driver;
 
-        private int _id;
+        private string _name;
         private HttpResponseMessage _response;
 
-        public PokemonsStepDefinitions(WebApiDriver driver)
+        public PokemonTypesStepDefinitions(WebApiDriver driver)
         {
             _driver = driver ?? throw new ArgumentNullException(nameof(driver));
         }
 
         [Given(@"I have '(.*)' as argument")]
-        public void GivenIHaveAsArgument(int id)
+        public void GivenIHaveAsArgument(string name)
         {
-            _id = id;
+            _name = name;
         }
 
-        [When(@"I send a request to Pokemons.Pokemons.Api")]
+        [When(@"I send a request to Pokemons.Types.Api")]
         public async Task WhenISendARequestToWebAPI()
         {
-            _response = await _driver.GetPokemons(_id);
+            _response = await _driver.GetTypes(_name);
         }
 
-        [Then(@"I get a pokemon with id '(.*)' and name '(.*)' with types '(.*)'")]
-        public async Task ThenIGetAsPokemon(int id, string pokemon, params string[] types)
+        [Then(@"I get types '(.*)'")]
+        public async Task ThenIGetAsPokemon(params string[] types)
         {
             _response.EnsureSuccessStatusCode();
 
             var content = await _response.Content.ReadAsStreamAsync();
             var outputDeserialized = await Deserialize(content);
-            var output = JsonToPokemonResponseConverter.Execute(outputDeserialized);
+            var output = JsonToPokemonTypesResponseConverter.Execute(outputDeserialized);
 
-            output.PokemonId.Should().Be(id);
-            output.PokemonName.Should().BeEquivalentTo(pokemon);
             output.Types.Should().BeEquivalentTo(types);
         }
 

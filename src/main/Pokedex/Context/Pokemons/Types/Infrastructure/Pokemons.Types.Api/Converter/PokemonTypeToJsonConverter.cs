@@ -9,10 +9,10 @@ namespace Pokemons.Types.Api.Converter
         public static string Execute(PokemonTypes pokemonTypes)
         {
             return JsonConvert.SerializeObject(
-                pokemonTypes.Types.Select(s => new
+                new
                 {
-                    Name = s.PokemonTypeName.Name
-                }));
+                    Types = pokemonTypes.Types.Select(s => s.PokemonTypeName.Name)
+                });
         }
     }
 }

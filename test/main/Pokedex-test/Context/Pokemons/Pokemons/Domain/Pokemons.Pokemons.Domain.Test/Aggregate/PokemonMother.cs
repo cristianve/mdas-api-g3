@@ -1,4 +1,5 @@
-﻿using Pokemons.Pokemons.Domain.Test.ValueObject;
+﻿using Pokemons.Pokemons.Domain.Aggregate;
+using Pokemons.Pokemons.Domain.Test.ValueObject;
 using Pokemons.Pokemons.Domain.ValueObject;
 using System.Collections.Generic;
 
@@ -10,18 +11,15 @@ namespace Pokemons.Pokemons.Domain.Test.Aggregate
         public PokemonName PokemonName { get; set; }
         public PokemonTypes PokemonTypes { get; set; }
 
-        public static PokemonMother Pokemon()
+        public static Pokemon Pokemon()
         {
-            return new PokemonMother()
-            {
-                PokemonId = new PokemonId(PokemonIdMother.Id()),
-                PokemonName = new PokemonName(PokemonNameMother.Name()),
-                PokemonTypes = new PokemonTypes(new List<PokemonType>()
+            return new Pokemon(new PokemonId(PokemonIdMother.Id()),
+                new PokemonName(PokemonNameMother.Name()),
+                new PokemonTypes(new List<PokemonType>()
                 {
                     new PokemonType("fire"),
                     new PokemonType("flying"),
-                })
-            };
+                }));
         }
     }
 }
