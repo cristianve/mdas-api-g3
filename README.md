@@ -185,7 +185,7 @@ cd mdas-api-g3
 ### Execute the following commands
 ```
 cd mdas-api-g3
-cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
+cd src/main/Pokedex/Context/Pokemons/Pokemons/Infrastructure/Pokemons.Pokemons.Api
 ```
 ### Compile the app
 ```dotnet build Pokemons.Pokemons.Api.csproj```
@@ -194,7 +194,7 @@ cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
 
 
 ### Go to
-```https://localhost:5002/swagger/index.html```
+```https://localhost:5003/swagger/index.html```
 
 ---
 
