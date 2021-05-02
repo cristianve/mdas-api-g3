@@ -143,7 +143,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ### Run the app
 ```dotnet run Pokemons.Types.Api.csproj```
 ### Go to
-```https://localhost:5001/swagger/index.html```
+```http://localhost:5000/swagger/index.html```
 
 ---
 
@@ -158,7 +158,7 @@ cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
 ### Run the app
 ```dotnet run Users.Users.Api.csproj```
 ### Go to
-```https://localhost:5002/swagger/index.html```
+```http://localhost:5000/swagger/index.html```
 
 ---
 
@@ -194,7 +194,7 @@ cd src/main/Pokedex/Context/Pokemons/Pokemons/Infrastructure/Pokemons.Pokemons.A
 
 
 ### Go to
-```https://localhost:5003/swagger/index.html```
+```http://localhost:5000/swagger/index.html```
 
 ---
 
