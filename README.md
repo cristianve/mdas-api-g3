@@ -174,7 +174,7 @@ cd mdas-api-g3
 
 **Note:**
 
-* Unitary testing: *.Application.Test y *.Domaint.Test
+* **Unitary testing:** *.Application.Test y *.Domaint.Test
 
 
 ---
@@ -209,8 +209,8 @@ cd mdas-api-g3
 ```dotnet test  test/main/Pokedex-test```
 
 **Note:**
-* Acceptance test: *.Apit.Test
-* Integration test: *.Persistence.Test
+* **Acceptance test:** *.Apit.Test
+* **Integration test:** *.Persistence.Test
 
 ---
 
@@ -253,7 +253,7 @@ cd mdas-api-g3
 
 ## Acceptance Test - Integration Test ✅
 
-![Swagger Favorite](images/test-acceptance-integration.PNG)
+![Swagger Favorite](images/test-acceptance-integration.jpeg)
 
 ## Swagger User - Api Rest 🌐
 ![Swagger Favorite](images/pokemon-details.PNG)
