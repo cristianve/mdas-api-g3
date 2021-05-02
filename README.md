@@ -77,8 +77,15 @@ Conditions:
 
 ### Design:
 
-* We generate a new **Bounded Content User**, to encapsulate funcionality in a single domain model.
+* We generate a new **Module** inside the previous **Pokedex Bounded Content**, to encapsulate similar funcionality.
 
+Current global project structure:
+
+* Pokedex (BC)
+  *  **Pokemons** (Module)
+  *  **Types** (Module)
+* Users (BC)
+  *  **Users**  (Module)
 
 
 # 3. Folder Structure 📂
