@@ -255,5 +255,5 @@ cd mdas-api-g3
 
 ![Swagger Favorite](images/test-acceptance-integration.jpeg)
 
-## Swagger User - Api Rest 🌐
+## Swagger Pokemons - Api Rest 🌐
 ![Swagger Favorite](images/pokemon-details.PNG)
