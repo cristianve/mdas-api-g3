@@ -79,11 +79,6 @@ Conditions:
 
 * We generate a new **Bounded Content User**, to encapsulate funcionality in a single domain model.
 
-Use cases:
-
-* **AddPokemonToUserFavorite:** Requires UserId and PokemonName, verify that user exist to add the pokemon to favorite.
-* **Create User:** Creates a new User from UserId (ValueObject) on local memory if not exist.
-* **GetPokemonUserFavorite:** From a UserId return the list of favorite pokemons if exist.
 
 
 # 3. Folder Structure 📂
