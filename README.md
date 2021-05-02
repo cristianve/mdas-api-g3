@@ -254,7 +254,7 @@ cd mdas-api-g3
 ## Swagger Pokemons - Api Rest 🌐
 ![Swagger Favorite](images/pokemon-details.PNG)
 
-## Acceptance Test - Integration Test ✅
+## Acceptance  - Integration  - Unitary Testing ✅
 ![Swagger Favorite](images/test-acceptance-integration.jpeg)
 
 **Note:**
