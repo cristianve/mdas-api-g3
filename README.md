@@ -57,7 +57,7 @@ Use cases:
 * **GetPokemonUserFavorite:** From a UserId return the list of favorite pokemons if exist.
 
 
-# 2. Challenge 3️⃣ - Pokemon Details 👌
+# 3. Challenge 3️⃣ - Pokemon Details 👌
 
 ### Requirements:
 
