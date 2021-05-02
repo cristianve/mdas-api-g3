@@ -256,3 +256,8 @@ cd mdas-api-g3
 
 ## Acceptance Test - Integration Test ✅
 ![Swagger Favorite](images/test-acceptance-integration.jpeg)
+
+**Note:**
+* **Acceptance test:** *.Apit.Test
+* **Integration test:** *.Persistence.Test
+* **Unitary testing:** *.Application.Test y *.Domaint.Test
