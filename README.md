@@ -251,9 +251,9 @@ cd mdas-api-g3
 
 ## Pokemons Details  - Challenge 3
 
-## Acceptance Test - Integration Test ✅
-
-![Swagger Favorite](images/test-acceptance-integration.jpeg)
 
 ## Swagger Pokemons - Api Rest 🌐
 ![Swagger Favorite](images/pokemon-details.PNG)
+
+## Acceptance Test - Integration Test ✅
+![Swagger Favorite](images/test-acceptance-integration.jpeg)
