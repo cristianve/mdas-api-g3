@@ -7,6 +7,7 @@
 
 * 1. Challenge 1 - Pokemons 
 * 2. Challenge 2 - Pokemon Favorites
+* 3. Challenge 3 - Pokemon Details
 * 3. Folder structuring
 * 4. Install 
 * 5. Results
@@ -56,6 +57,34 @@ Use cases:
 * **GetPokemonUserFavorite:** From a UserId return the list of favorite pokemons if exist.
 
 
+# 2. Challenge 3️⃣ - Pokemon Details 👌
+
+### Requirements:
+
+We want to obtain the details of a pokemon based on an ID via HTTP endpoint:
+JSON Response:
+* ID
+* Name
+* Types (only names)
+
+**Acceptance test** and **Integration test**.
+
+Conditions:
+
+* Catch and drive when pokemon not exist
+* Catch and drive when the external API is offline.
+
+
+### Design:
+
+* We generate a new **Bounded Content User**, to encapsulate funcionality in a single domain model.
+
+Use cases:
+
+* **AddPokemonToUserFavorite:** Requires UserId and PokemonName, verify that user exist to add the pokemon to favorite.
+* **Create User:** Creates a new User from UserId (ValueObject) on local memory if not exist.
+* **GetPokemonUserFavorite:** From a UserId return the list of favorite pokemons if exist.
+
 
 # 3. Folder Structure 📂
 
@@ -85,7 +114,7 @@ https://dotnet.microsoft.com/download/dotnet/5.0
 
 ---
 
-## Console 🖥️
+## Console - CLI 🖥️
 ```git clone https://github.com/CarLoOSX/mdas-api-g3```
 ### Execute the following commands
 ```
@@ -101,7 +130,7 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.CliCons
 
 ## Api Rest 🌐
 
-## Pokemons API
+## Pokemons API 1️⃣
 ### Execute the following commands
 ```
 cd mdas-api-g3
@@ -112,11 +141,11 @@ cd src/main/Pokedex/Context/Pokemons/Types/Infrastructure/Pokemons.Types.Api
 ### Run the app
 ```dotnet run Pokemons.Types.Api.csproj```
 ### Go to
-```https://localhost:{PORT}/swagger/index.html```
+```https://localhost:5001/swagger/index.html```
 
 ---
 
-## Users/Pokemon Favoite API 👤
+## Users/Pokemon Favoite API 👤2️⃣
 ### Execute the following commands
 ```
 cd mdas-api-g3
@@ -127,7 +156,7 @@ cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
 ### Run the app
 ```dotnet run Users.Users.Api.csproj```
 ### Go to
-```https://localhost:{PORT}/swagger/index.html```
+```https://localhost:5002/swagger/index.html```
 
 ---
 
@@ -141,6 +170,45 @@ cd mdas-api-g3
 ### Execute test the app
 ```dotnet test  test/main/Pokedex-test```
 
+**Note:**
+
+* Unitary testing: *.Application.Test y *.Domaint.Test
+
+
+---
+
+---
+
+## Pokemons Details API 3️⃣
+### Execute the following commands
+```
+cd mdas-api-g3
+cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
+```
+### Compile the app
+```dotnet build Pokemons.Pokemons.Api.csproj```
+### Run the app
+```dotnet run Pokemons.Pokemons.Api.csproj```
+
+
+### Go to
+```https://localhost:5002/swagger/index.html```
+
+---
+
+---
+
+## Integration - Acceptance test ✅
+### Execute the following commands
+```
+cd mdas-api-g3
+```
+### Execute test the app
+```dotnet test  test/main/Pokedex-test```
+
+**Note:**
+* Acceptance test: *.Apit.Test
+* Integration test: *.Persistence.Test
 
 ---
 
@@ -179,4 +247,11 @@ cd mdas-api-g3
 ![Create User](images/getPokemons.PNG)
 
 
+## Pokemons Details  - Challenge 3
 
+## Acceptance Test - Integration Test ✅
+
+![Swagger Favorite](images/test-result.PNG)
+
+## Swagger User - Api Rest 🌐
+![Swagger Favorite](images/swagger-fav.PNG)
