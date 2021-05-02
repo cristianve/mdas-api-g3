@@ -174,7 +174,7 @@ cd mdas-api-g3
 
 **Note:**
 
-* **Unitary testing:** *.Application.Test y *.Domaint.Test
+* **Unitary testing:** *.Application.Test y *.Domain.Test
 
 
 ---
@@ -258,6 +258,6 @@ cd mdas-api-g3
 ![Swagger Favorite](images/test-acceptance-integration.jpeg)
 
 **Note:**
-* **Acceptance test:** *.Apit.Test
+* **Acceptance test:** *.Api.Test
 * **Integration test:** *.Persistence.Test
-* **Unitary testing:** *.Application.Test y *.Domaint.Test
+* **Unitary testing:** *.Application.Test y *.Domain.Test
