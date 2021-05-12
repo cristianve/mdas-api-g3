@@ -89,7 +89,7 @@ Current global project structure:
   *  **Users**  (Module)
 
 
-# 4. Individual Challenge - Publish / Subscriber - RabbitMQ
+# 4. Individual Challenge 🧐 - Publish / Subscriber - RabbitMQ 📩📡
 
 ### Requirements:
 
