@@ -1,0 +1,19 @@
+***************************************
+--------Run RabbitMQ Container---------
+***************************************
+
+docker run -d -p 15672:15672 -p 5672:5672 --hostname library-host --name library rabbitmq:3-management
+
+***************************************
+--------Config RabbitMQ-------
+***************************************
+
+Publisher:
+
+Generar el nombre del exchange: "domain_pokemon_add_event"
+
+
+Subscriber:
+
+
+Generar el nombre de la cola donde escuchar (Listener) "notify_pokemon_on_add_favourite"
