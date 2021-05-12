@@ -8,6 +8,7 @@
 * 1. Challenge 1 - Pokemons 
 * 2. Challenge 2 - Pokemon Favorites
 * 3. Challenge 3 - Pokemon Details
+* 4. Individual Challenge  - Publish / Subscriber - RabbitMQ
 * 3. Folder structuring
 * 4. Install 
 * 5. Results
@@ -87,6 +88,23 @@ Current global project structure:
 * Users (BC)
   *  **Users**  (Module)
 
+
+# 4. Individual Challenge 🧐 - Publish / Subscriber - RabbitMQ 📩📡
+
+### Requirements:
+
+We want to return the number of times a pokemon has been marked as favourite.
+
+* Return via endpoint/http count of mark as favourite inside a JSON.
+* Add new test related with new implementation.
+
+
+### Design:
+
+We have to use a message broker **RabbitMQ** to apply the pattern Publisher/Subcriber betwen the User (when add favorite pokemon) and Pokemon (to increase the counter of markedAs).
+
+## General idea diagram - Publish / Subscriber - RabbitMQ 
+![Diagram](images/retoIndividual.png)
 
 # 3. Folder Structure 📂
 
