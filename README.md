@@ -103,6 +103,8 @@ We want to return the number of times a pokemon has been marked as favourite.
 
 We have to use a message broker **RabbitMQ** to apply the pattern Publisher/Subcriber betwen the User (when add favorite pokemon) and Pokemon (to increase the counter of markedAs).
 
+## General idea diagram - Publish / Subscriber - RabbitMQ 
+![Diagram](images/retoIndividual.png)
 
 # 3. Folder Structure 📂
 
