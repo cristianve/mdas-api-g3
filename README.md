@@ -232,6 +232,23 @@ cd mdas-api-g3
 
 ---
 
+---
+
+## Individual Challenge 🧐 - Publish / Subscriber - RabbitMQ 📩📡
+
+### Run docker rabbitMQ:
+
+```
+docker run -d -p 15672:15672 -p 5672:5672 --hostname library-host --name library rabbitmq:3-management
+```
+
+### Go to localhost:15672 and add:
+
+* Publisher: Exchange -> "domain_pokemon_add_event"
+* Subscriber: Queu -> "notify_pokemon_on_add_favourite"
+---
+
+
 
 # 4. Results 📷
 
