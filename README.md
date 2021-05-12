@@ -93,11 +93,16 @@ Current global project structure:
 
 ### Requirements:
 
-TODO
+We want to return the number of times a pokemon has been marked as favourite.
+
+* Return via endpoint/http count of mark as favourite inside a JSON.
+* Add new test related with new implementation.
+
 
 ### Design:
 
-TODO
+We have to use a message broker **RabbitMQ** to apply the pattern Publisher/Subcriber betwen the User (when add favorite pokemon) and Pokemon (to increase the counter of markedAs).
+
 
 # 3. Folder Structure 📂
 
