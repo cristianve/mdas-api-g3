@@ -8,6 +8,7 @@
 * 1. Challenge 1 - Pokemons 
 * 2. Challenge 2 - Pokemon Favorites
 * 3. Challenge 3 - Pokemon Details
+* 4. Individual Challenge  - Publish / Subscriber - RabbitMQ
 * 3. Folder structuring
 * 4. Install 
 * 5. Results
@@ -87,6 +88,16 @@ Current global project structure:
 * Users (BC)
   *  **Users**  (Module)
 
+
+# 4. Individual Challenge - Publish / Subscriber - RabbitMQ
+
+### Requirements:
+
+TODO
+
+### Design:
+
+TODO
 
 # 3. Folder Structure 📂
 
