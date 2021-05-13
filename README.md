@@ -282,7 +282,7 @@ http://localhost:5002/swagger/index.html
 
 ### Añadimos usuario y le añadimos un pokemon favorito, observamos como lo añade en la cola notify_pokemon_on_add_favourite:
 
-![Diagram](images/rabbitAdd.PNG)
+![Diagram](images/addRabbitMQ.jpg)
 
 
 ---
