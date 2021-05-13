@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Api", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Persistence", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Persistence\Pokemons.Pokemons.Persistence.csproj", "{E80EF5AD-AF10-4BE0-885D-6F096E11EC1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker", "Context\Users\Users\Infrastructure\MessageBroker\MessageBroker.csproj", "{817D8961-4785-4602-BAFE-134CE0650BB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{E80EF5AD-AF10-4BE0-885D-6F096E11EC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E80EF5AD-AF10-4BE0-885D-6F096E11EC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E80EF5AD-AF10-4BE0-885D-6F096E11EC1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817D8961-4785-4602-BAFE-134CE0650BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817D8961-4785-4602-BAFE-134CE0650BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817D8961-4785-4602-BAFE-134CE0650BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817D8961-4785-4602-BAFE-134CE0650BB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{5F8AEF39-0603-4B38-8FE6-04AC6E83233C} = {C3E77FCF-E335-4A29-A14D-2BFB94E76817}
 		{F4424B29-4F87-4B3A-B649-78ADEFAFD453} = {C49DF116-44F5-4832-8CC8-D4131D12BC93}
 		{E80EF5AD-AF10-4BE0-885D-6F096E11EC1C} = {C49DF116-44F5-4832-8CC8-D4131D12BC93}
+		{817D8961-4785-4602-BAFE-134CE0650BB7} = {CD77585B-28CE-4EF0-A55D-E01D2BF5DF6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47E5EF52-D71F-4F5D-862D-C732056D8F24}

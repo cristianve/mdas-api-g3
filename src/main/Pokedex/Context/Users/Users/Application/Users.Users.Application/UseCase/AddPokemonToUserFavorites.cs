@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Users.Users.Domain.Aggregate;
 using Users.Users.Domain.Entities;
+using Users.Users.Domain.Repositories;
 using Users.Users.Domain.Services;
 using Users.Users.Domain.ValueObject;
 
@@ -10,7 +11,7 @@ namespace Users.Users.Application.UseCase
     {
         private readonly UserFinder _userFinder;
         private readonly PokemonFavoriteCreator _pokemonFavoriteCreator;
-
+        private readonly EventPublisher publisher;
         public AddPokemonToUserFavorites(UserFinder userFinder, PokemonFavoriteCreator pokemonFavoriteCreator)
         {
             _userFinder = userFinder;
@@ -21,6 +22,8 @@ namespace Users.Users.Application.UseCase
         {
             User user = await _userFinder.Execute(new UserId(userId));
             await _pokemonFavoriteCreator.Execute(user, new PokemonFavorite(new PokemonId(pokemonId)));
+            publisher.Publish(new DomainEvent(new MessageEvent(pokemonId.ToString())));
+
         }
     }
 }
