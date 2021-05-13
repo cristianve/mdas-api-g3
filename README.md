@@ -241,8 +241,27 @@ cd mdas-api-g3
 ```
 docker run -d -p 15672:15672 -p 5672:5672 --hostname library-host --name library rabbitmq:3-management
 ```
+### Go to
+```http://localhost:15672/```
 
-### Go to localhost:15672 and add:
+* Username: guest
+* Password guest
+
+* 1- Go to Admin Tab then on left vertical panel select Virtual Host
+* 2- Add new virtual host
+
+PHOTO
+
+* 3- Go to Exchanges then Add a new exchange:
+
+Name: domain_pokemon_add_event
+
+* 4- Go to Queue then Add a new queue:
+
+Name: notify_pokemon_on_add_favourite
+
+** Note: Select correct virtual host (library).
+### Summary
 
 * Publisher: Exchange -> "domain_pokemon_add_event"
 * Subscriber: Queu -> "notify_pokemon_on_add_favourite"
