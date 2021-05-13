@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using Microsoft.Extensions.Caching.Memory;
 using Pokemons.Pokemons.Domain.Aggregate;
 using Pokemons.Pokemons.Domain.Exceptions;
 using Pokemons.Pokemons.Domain.Repositories;
@@ -14,13 +15,27 @@ namespace Pokemons.Pokemons.Persistence
     public class PokeApiPokemonRepository : PokemonRepository
     {
         private const string API_URL = "https://pokeapi.co/api/v2/";
+        private const string CACHE_KEY_PREFIX = "pokemons/";
+        
         private HttpClient _httpClient;
-
-        public PokeApiPokemonRepository()
+        private readonly IMemoryCache _memoryCache;
+        
+        public PokeApiPokemonRepository(IMemoryCache memoryCache)
         {
             _httpClient = new HttpClient();
+            _memoryCache = memoryCache;
         }
 
+        public async Task UpdateFavouriteCount(PokemonId pokemonId)
+        {
+            var cacheKey = GetCacheKey(pokemonId.Id.ToString());
+
+            var previousValue =  _memoryCache.TryGetValue(cacheKey, out Pokemon pokemonInMemory);
+
+            _memoryCache.Set(cacheKey, previousValue);
+        }
+
+        
         public async Task<bool> Exists(PokemonId pokemonId)
         {
             return (await Find(pokemonId)) != null;
@@ -35,7 +50,8 @@ namespace Pokemons.Pokemons.Persistence
             return new Pokemon(
                 new PokemonId(int.Parse(json["id"].ToString())),
                 new PokemonName(json["name"].ToString()),
-                new PokemonTypes(json["types"].Values("type").Select(x => new PokemonType(x["name"].ToString())).ToList())
+                new PokemonTypes(json["types"].Values("type").Select(x => new PokemonType(x["name"].ToString())).ToList()),
+                new PokemonFavouriteCount(0)
                 );
         }
 
@@ -71,5 +87,18 @@ namespace Pokemons.Pokemons.Persistence
                 throw new PokeApiRepositoryException();
             }
         }
+        
+        private string GetCacheKey(string key)
+        {
+            return CACHE_KEY_PREFIX + key;
+        }
+        
+        private string GetCacheValue(string value)
+        {
+            return CACHE_KEY_PREFIX + value;
+        }
+        
     }
+    
+    
 }

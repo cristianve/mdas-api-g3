@@ -8,5 +8,7 @@ namespace Pokemons.Pokemons.Domain.Repositories
     {
         Task<Pokemon> Find(PokemonId pokemonId);
         Task<bool> Exists(PokemonId pokemonId);
+
+        Task UpdateFavouriteCount(PokemonId pokemonId);
     }
 }

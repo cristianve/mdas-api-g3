@@ -26,7 +26,8 @@ namespace Pokemons.Pokemons.Api
             ConfigureUseCases(services);
             ConfigureDomainServices(services);
             ConfigureRepositories(services);
-
+            ConfigureCache(services);
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -59,6 +60,7 @@ namespace Pokemons.Pokemons.Api
         private void ConfigureUseCases(IServiceCollection services)
         {
             services.AddScoped<GetPokemonById>();
+            services.AddScoped<NotifyPokemonOnFavouriteAdded>();
         }
 
         private void ConfigureDomainServices(IServiceCollection services)
@@ -70,5 +72,12 @@ namespace Pokemons.Pokemons.Api
         {
             services.AddScoped<PokemonRepository, PokeApiPokemonRepository>();
         }
+        
+        private void ConfigureCache(IServiceCollection services)
+        {
+            services.AddMemoryCache();
+        }
+        
+        
     }
 }

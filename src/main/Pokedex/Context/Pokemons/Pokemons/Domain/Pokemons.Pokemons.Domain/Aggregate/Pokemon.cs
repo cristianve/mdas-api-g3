@@ -8,11 +8,14 @@ namespace Pokemons.Pokemons.Domain.Aggregate
         public PokemonName PokemonName { get; }
         public PokemonTypes PokemonTypes { get; }
 
-        public Pokemon(PokemonId pokemonId, PokemonName pokemonName, PokemonTypes pokemonTypes)
+        public PokemonFavouriteCount PokemonFavouriteCount { get; }
+        
+        public Pokemon(PokemonId pokemonId, PokemonName pokemonName, PokemonTypes pokemonTypes, PokemonFavouriteCount pokemonFavouriteCount)
         {
             PokemonId = pokemonId;
             PokemonName = pokemonName;
             PokemonTypes = pokemonTypes;
+            PokemonFavouriteCount = pokemonFavouriteCount;
         }
     }
 }
