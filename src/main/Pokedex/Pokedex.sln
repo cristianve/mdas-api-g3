@@ -59,7 +59,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Api", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemons.Pokemons.Persistence", "Context\Pokemons\Pokemons\Infrastructure\Pokemons.Pokemons.Persistence\Pokemons.Pokemons.Persistence.csproj", "{E80EF5AD-AF10-4BE0-885D-6F096E11EC1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBroker", "Context\Users\Users\Infrastructure\MessageBroker\MessageBroker.csproj", "{817D8961-4785-4602-BAFE-134CE0650BB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Users.MessageBroker", "Context\Users\Users\Infrastructure\Users.Users.MessageBroker\Users.Users.MessageBroker.csproj", "{817D8961-4785-4602-BAFE-134CE0650BB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Application\Users.Users.Application\Users.Users.Application.csproj" />
     <ProjectReference Include="..\..\Domain\Users.Users.Domain\Users.Users.Domain.csproj" />
+    <ProjectReference Include="..\Users.Users.MessageBroker\Users.Users.MessageBroker.csproj" />
     <ProjectReference Include="..\Users.Users.Persistence\Users.Users.Persistence.csproj" />
   </ItemGroup>
 

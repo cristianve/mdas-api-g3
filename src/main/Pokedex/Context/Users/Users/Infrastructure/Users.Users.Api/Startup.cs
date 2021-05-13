@@ -9,6 +9,7 @@ using Users.Users.Domain.Repositories;
 using Users.Users.Domain.Services;
 using Users.Users.Persistence;
 
+
 namespace Users.Users.Api
 {
     public class Startup
@@ -72,6 +73,7 @@ namespace Users.Users.Api
         private void ConfigureRepositories(IServiceCollection services)
         {
             services.AddScoped<UserRepository, InMemoryUserRepository>();
+            services.AddScoped<EventPublisher, RabbitMqEventPublisher>();
         }
 
         private void ConfigureCache(IServiceCollection services)
