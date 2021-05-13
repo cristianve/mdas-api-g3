@@ -269,6 +269,10 @@ Name: notify_pokemon_on_add_favourite
 
 * Publisher: Exchange -> "domain_pokemon_add_event"
 * Subscriber: Queu -> "notify_pokemon_on_add_favourite"
+
+### Levantamos la api de User para añadir pokemon a favoritos:
+```
+```
 ---
 
 
