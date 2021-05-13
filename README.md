@@ -250,19 +250,19 @@ docker run -d -p 15672:15672 -p 5672:5672 --hostname library-host --name library
 * 1- Go to Admin Tab then on left vertical panel select Virtual Host
 * 2- Add new virtual host
 
-![Diagram](images/rabbitMQ.png)
+![Diagram](images/rabbitMQ.PNG)
 
 * 3- Go to Exchanges then Add a new exchange:
 
 Name: domain_pokemon_add_event
 
-![Diagram](images/rabbitMQ2.png)
+![Diagram](images/rabbitMQ2.PNG)
 
 * 4- Go to Queue then Add a new queue:
 
 Name: notify_pokemon_on_add_favourite
 
-![Diagram](images/rabbitMQ3.png)
+![Diagram](images/rabbitMQ3.PNG)
 
 ** Note: Select correct virtual host (library).
 ### Summary
