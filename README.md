@@ -270,9 +270,21 @@ Name: notify_pokemon_on_add_favourite
 * Publisher: Exchange -> "domain_pokemon_add_event"
 * Subscriber: Queu -> "notify_pokemon_on_add_favourite"
 
-### Levantamos la api de User para añadir pokemon a favoritos:
+### Levantamos la API de User para añadir pokemon a favoritos:
 ```
+cd mdas-api-g3
+cd src/main/Pokedex/Context/Users/Users/Infrastructure/Users.Users.Api
+dotnet build Users.Users.Api.csproj
+dotnet run Users.Users.Api.csproj --urls="http://localhost:5002"
 ```
+
+http://localhost:5002/swagger/index.html
+
+### Añadimos usuario y le añadimos un pokemon favorito, observamos como lo añade en la cola notify_pokemon_on_add_favourite:
+
+![Diagram](images/rabbitAdd.PNG)
+
+
 ---
 
 
